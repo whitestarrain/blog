@@ -24,6 +24,8 @@ layout: home
 </ul>
 {%- endif -%}
 
+{%- if site.posts.size > site.paginate -%}
+<!-- 只有在大于单页数量时才出现 -->
 <div style="margin-bottom: 60px;" class="pagination">
 
 	<!-- 上一页 -->
@@ -64,11 +66,12 @@ layout: home
 	{% endif %}
 
 </div>
+{%- endif -%}
 
 <script>
 	lis = document.querySelectorAll(".posts>li")
-	for(var i = 0;i<lis.length;i++){
-		lis[i].onclick = function(e){
+	for (var i = 0; i < lis.length; i++) {
+		lis[i].onclick = function (e) {
 			this.querySelector(".post-title").click()
 		}
 	}

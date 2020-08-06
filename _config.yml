@@ -1,6 +1,6 @@
-title: Texture Theme
-author: GitHub User
-email: your-email@domain.com
+title: whitestarrain's blog
+author: whitestarrain
+email: kaneki.lusou@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -18,25 +18,29 @@ paginate_path: "/page:num"
 
 permalink: /posts/:title/
 texture:
-  title: Adam Denisov
-  tagline: Developer. Designer
+  title: whitestarrain's blog
+  tagline: Developer
   date_format: "%b %-d, %Y"
   style: black
   showNav: true
   show_excerpts: true
   navigation:
     - title: home
-      url: "/"
+      url: "/blog/"
     - title: My Work
-      url: "/my-work"
+      url: "/blog/"
     - title: Resume
-      url: "/resume"
+      url: "/blog/"
+    - title: archives
+      url: "/blog/archives/"
+    - title: tags
+      url: "/blog/tags/"
 
   # generate social links in footer
   social_links:
-    twitter: thelehhman
-    github:  thelehhman
-    linkedIn: in/thelehhman
+    twitter: https://twitter.com/qS5DNI9AnIqygQs
+    github:  https://github.com/whitestarrain
+    linkedIn: 
     rss: rss
 
 
