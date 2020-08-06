@@ -1,13 +1,19 @@
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-<div class="container">
+<div class="container" style="height: 250px;">
 	<h1>{{ page.title }}</h1>
 	<h4 class="post-description">{{ page.description }}</h4>
 	<div class="post-date" style="margin-top:20px">
 		Published on {{ page.date | date: date_format }}
 	</div>
-	<ul class="post-tags">
+	<ul class="post-tags" style="overflow: auto;">
 		{%- for tag in page.categories -%}
+		<a href="/blog/tags/#{{ tag }}">
 			<li>{{ tag }}</li>
+		</a>
 		{%- endfor -%}
 	</ul>
+	
+	<div id="busuanzi_container_page_pv">
+		Amount Of Article Reading: <span id="busuanzi_value_page_pv" style="padding: 0 10px;"></span>times
+	</div>
 </div>
