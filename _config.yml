@@ -13,6 +13,9 @@ baseurl: "/blog"  # 本地访问时要删除
 sass:
   sass_dir: _sass
 
+paginate: 5
+paginate_path: "/page:num"
+
 permalink: /posts/:title/
 texture:
   title: Adam Denisov
