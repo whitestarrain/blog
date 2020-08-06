@@ -24,37 +24,43 @@ layout: home
 </ul>
 {%- endif -%}
 
-<div>
+<div style="margin-bottom: 60px;" class="pagination">
 
 	<!-- 上一页 -->
-	{% if paginator.next_page %}
-	<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" style="color: black;">&laquo;
-		Prev</a>
+	{% if paginator.previous_page %}
+	<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" style="color: black;"
+		class="pagination-newer">&laquo; Prev</a>
 	{% else %}
-	<span style="color: gray;"> &laquo; Prev</span>
+	<a href="javascript:void(0)" style="color: gray;" class="pagination-newer">&laquo; Prev</a>
 	{% endif %}
+	<span class="pagination-inner">
 
-	<!-- 野目录 -->
-	{% for page in (1..paginator.total_pages) %}
-	{% if page == paginator.page %}
-	<em>{{ page }}</em>
-	{% elsif page == 1 %}
-	<a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">
-		{{ page }}
-	</a>
-	{% else %}
-	<a href="{{ site.paginate_path | prepend: '/' | replace: '//', '/' | replace: ':num', page }}">
-		{{ page }}
-	</a>
-	{% endif %}
-	{% endfor %}
+
+		<!-- 页目录 -->
+		{% for page in (1..paginator.total_pages) %}
+		{% if page == paginator.page %}
+		<a href="javascript:void(0)" class="pagination-active">{{ page }}</a>
+		{% elsif page == 1 %}
+		<a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}" style="color: black;">
+			{{ page }}
+		</a>
+		{% else %}
+		<a href="{{ site.baseurl | append:site.paginate_path | prepend: '/' | replace: '//', '/' | replace: ':num', page }}"
+			style="color: black;">
+			{{ page }}
+		</a>
+		{% endif %}
+		{% endfor %}
+
+
+	</span>
 
 	<!-- 下一页 -->
-	{% if paginator.previous_page %}
-	<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" style="color: black;">Next
-		&raquo;</a>
+	{% if paginator.next_page %}
+	<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" style="color: black;"
+		class="pagination-older">Next &raquo;</a>
 	{% else %}
-	<span style="color: gray;">Next &raquo;</span>
+	<a href="javascript:void(0)" style="color: gray;" class="pagination-older">Next &raquo;</a>
 	{% endif %}
 
 </div>
