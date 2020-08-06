@@ -6,7 +6,7 @@ layout: home
 {%- if site.posts.size > 0 -%}
 <ul class="posts">
 	{%- for post in paginator.posts -%}
-	<li>
+	<li class="shadow">
 		{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 		<div class="post-meta">
 			<a class="post-link" href="{{ post.url | relative_url }}">
@@ -64,3 +64,13 @@ layout: home
 	{% endif %}
 
 </div>
+
+<script>
+	lis = document.querySelectorAll(".posts>li")
+	for(var i = 0;i<lis.length;i++){
+		lis[i].onclick = function(e){
+			this.querySelector(".post-title").click()
+		}
+	}
+
+</script>

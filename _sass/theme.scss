@@ -196,8 +196,8 @@ header {
 	list-style-type: none;
 	padding: 0;
 	>li {
-		margin-bottom: 30px;
-		padding-bottom: 20px;
+		margin-bottom: 20px;
+		padding: 10px;
 		&:not(:last-child) {
 			border-bottom: 1px solid $lightGray;
 		}
