@@ -25,15 +25,15 @@ texture:
   showNav: true
   show_excerpts: true
   navigation:
-    - title: home
+    - title: Home
       url: "/blog/"
     - title: My Work
       url: "/blog/"
     - title: Resume
       url: "/blog/"
-    - title: archives
+    - title: Archives
       url: "/blog/archives/"
-    - title: tags
+    - title: Tags
       url: "/blog/tags/"
 
   # generate social links in footer

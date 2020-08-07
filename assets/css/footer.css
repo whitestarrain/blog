@@ -62,7 +62,8 @@
 }
 @media (max-width: 991px) {
     .site-footer [class^="col-"] {
-        margin-bottom: 30px;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
     }
 }
 @media (max-width: 767px) {

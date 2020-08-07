@@ -2,7 +2,6 @@
 layout: post
 categories: Jekyll Doc
 type: markdown
-toc: true
 ---
 Jekyll常用配置文档。
 
