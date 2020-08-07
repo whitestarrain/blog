@@ -12,7 +12,10 @@
   </header>
   <main>
     <div class="container">
-      <div class="post-container">
+      <div id="table-of-contents" style="position: absolute;right: 50px;">
+        {% toc %}
+      </div>
+      <div class="post-container" id="markdown-content">
           {{ content }}
       </div>
 
@@ -38,5 +41,13 @@
   {%- include footer.html -%}
 </body>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+
+/* 设置小屏幕自动隐藏toc */
+toc = document.getElementById("table-of-contents")
+if(window.innerWidth<1000){
+  toc.style.display = "none"
+}
 </script>
 </html>

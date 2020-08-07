@@ -13,13 +13,13 @@ baseurl: "/blog"  # 本地访问时要删除
 sass:
   sass_dir: _sass
 
-paginate: 5
+paginate: 7
 paginate_path: "/page:num"
 
 permalink: /posts/:title/
 texture:
   title: whitestarrain's blog
-  tagline: Developer
+  tagline: Relaxation is the source of strength for effort
   date_format: "%b %-d, %Y"
   style: black
   showNav: true
@@ -55,3 +55,14 @@ texture:
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate # 分页插件
+  - jekyll-toc  # toc插件
+
+
+toc:
+  min_level: 1
+  max_level: 6
+  no_toc_section_class: no_toc_section
+  list_class: section-nav shadow
+  sublist_class: ''
+  item_class: toc-entry
+  item_prefix: toc-

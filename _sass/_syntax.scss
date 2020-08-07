@@ -1,8 +1,8 @@
 @import 'ext/solarized-light';
 
 div.highlighter-rouge {
-	width: 100vw;
-	position: relative;
+	// width: 100vw;
+	// position: relative;
 	right: 150px;
 	margin: 40px 0;
 }
@@ -12,7 +12,7 @@ div.highlighter-rouge {
 }
 
 div.highlight {
-	padding: 30px 150px;
+	padding: 30px;
 }
 
 pre.highlight, code {
