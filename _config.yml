@@ -55,14 +55,4 @@ texture:
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate # 分页插件
-  - jekyll-toc  # toc插件
 
-
-toc:
-  min_level: 1
-  max_level: 6
-  no_toc_section_class: no_toc_section
-  list_class: section-nav shadow
-  sublist_class: ''
-  item_class: toc-entry
-  item_prefix: toc-

@@ -13,12 +13,14 @@
   <main>
     <div class="container">
       <div id="table-of-contents" style="position: absolute;right: 50px;">
-        {% toc %}
+        <!-- toc生成 -->
+        {% include toc.html html=content %}
       </div>
       <div class="post-container" id="markdown-content">
           {{ content }}
       </div>
 
+      
         <!-- Configure Disqus -->
       {%- if site.texture.disqus_shortname -%}
         <div id="disqus_thread" style="margin-top:25px"></div>
