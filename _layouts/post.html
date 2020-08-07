@@ -12,7 +12,7 @@
   </header>
   <main>
     <div class="container">
-      <div id="table-of-contents" style="position: absolute;right: 50px;">
+      <div id="table-of-contents" style="position: fixed;right: 50px;display: none;top:50%;">
         <!-- toc生成 -->
         {% include toc.html html=content %}
       </div>
@@ -46,10 +46,18 @@
 </script>
 <script>
 
-/* 设置小屏幕自动隐藏toc */
+/* 设置小屏幕自动显示toc */
 toc = document.getElementById("table-of-contents")
-if(window.innerWidth<1000){
-  toc.style.display = "none"
+if(window.innerWidth>1000){
+  toc.style.display = "block"
 }
+toc_ul = document.querySelector("#table-of-contents>ul")
+if(toc_ul !=null){
+  header = document.querySelector("header")
+  toc.style.top = (header.height+10)+"px"
+  toc_ul.style.height = (window.innerHeight - header.offsetHeight -20) + "px"
+}
+
+
 </script>
 </html>
