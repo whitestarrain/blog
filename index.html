@@ -12,6 +12,16 @@ layout: home
 			<a class="post-link" href="{{ post.url | relative_url }}">
 				<h2 class="post-title">{{ post.title | escape }}</h2>
 			</a>
+			<a href="javascript:void(0)">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-tag"></use>
+				</svg>
+				{%- for tag in post.categories -%}
+				<span class="tag">
+					{{ tag }}&nbsp;
+				</span>
+				{%- endfor -%}
+			</a>
 			<div class="post-date"><i class="icon-calendar"></i>{{ post.date | date: date_format }}</div>
 		</div>
 		<div class="post">
@@ -68,6 +78,7 @@ layout: home
 </div>
 {%- endif -%}
 
+
 <script>
 	lis = document.querySelectorAll(".posts>li")
 	for (var i = 0; i < lis.length; i++) {
@@ -77,3 +88,5 @@ layout: home
 	}
 
 </script>
+
+<script src="{{ '/assets/css/tagfont/iconfont.js' | relative_url }}"></script>

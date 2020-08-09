@@ -1,5 +1,4 @@
 {%- if site.texture.analytics_id -%}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.texture.analytics_id }}"></script>
 <script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag() { dataLayer.push(arguments); }
@@ -40,8 +39,24 @@
 <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}">
 
 <!-- Site footer -->
-<footer class="site-footer">
+<footer class="site-footer" id = "footer">
 	<div class="container">
+		<div class="row">
+			<h6>Statistics</h6>
+			<div>
+				all view times:
+				<span id="busuanzi_container_site_pv">
+					<span id="busuanzi_value_site_pv"></span>
+				</span>
+			</div>
+			<div>
+				number of Visitors:
+				<span id="busuanzi_container_site_uv">
+					<span id="busuanzi_value_site_uv"></span>
+				</span>
+			</div>
+		</div>
+		<hr>
 		<div class="row">
 			<div class="col-sm-12 col-md-6">
 				<h6>About</h6>

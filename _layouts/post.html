@@ -1,63 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   {%- include head.html -%}
 </head>
+
 <body>
   <header class="texture-{{ site.texture.style }}">
     <div class="container">
       {%- include nav.html -%}
     </div>
-    {%- include post_header.html -%}  
+    {%- include post_header.html -%}
   </header>
   <main>
     <div class="container">
-      <div id="table-of-contents" style="position: fixed;right: 50px;display: none;top:50%;">
+      <div id="table-of-contents" style="position: fixed;right: 30px;top:50%;transform: translateY(-50%);">
         <!-- toc生成 -->
         {% include toc.html html=content %}
       </div>
       <div class="post-container" id="markdown-content">
-          {{ content }}
+        {{ content }}
       </div>
 
-      
-        <!-- Configure Disqus -->
+
+      <!-- Configure Disqus -->
       {%- if site.texture.disqus_shortname -%}
-        <div id="disqus_thread" style="margin-top:25px"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = '{{ page.url | absolute_url }}';
-            this.page.identifier = '{{ page.url | absolute_url }}';
-          };
-          (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://{{ site.texture.disqus_shortname }}.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      <div id="disqus_thread" style="margin-top:25px"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = '{{ page.url | absolute_url }}';
+          this.page.identifier = '{{ page.url | absolute_url }}';
+        };
+        (function () {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://{{ site.texture.disqus_shortname }}.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+          powered by Disqus.</a></noscript>
       {%- endif -%}
     </div>
   </main>
   {%- include footer.html -%}
 </body>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+<script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
+
 <script>
-
-/* 设置小屏幕自动显示toc */
-toc = document.getElementById("table-of-contents")
-if(window.innerWidth>1000){
-  toc.style.display = "block"
-}
-toc_ul = document.querySelector("#table-of-contents>ul")
-if(toc_ul !=null){
+  toc = document.getElementById("table-of-contents")
   header = document.querySelector("header")
-  toc.style.top = (header.height+10)+"px"
-  toc_ul.style.height = (window.innerHeight - header.offsetHeight -20) + "px"
-}
+  footer = document.getElementById("footer")
+  toc_ul = document.querySelector("#table-of-contents>ul")
+  min_width =  900 +toc.offsetWidth
+  console.log( window.innerWidth+"---"+min_width)
+  if( window.innerWidth<min_width){
+    toc.style.display = "none"
+  }
+  if (toc_ul != null && window.innerWidth>min_width) {
+    toc_ul.style.height = window.innerHeight * 0.7 + "px"
+    function toggleToc() {
+      if (toc_ul != null) {
+        if (toc.offsetTop + window.scrollY - toc.offsetHeight * 0.5 > header.offsetHeight && toc.offsetTop + window.scrollY + toc.offsetHeight * 0.5 < footer.offsetTop) {
+          toc.className = "fadeIn"
+        } else {
+          toc.className = "fadeOut"
+        }
+      }
+    }
+    toggleToc()
+    window.onscroll = toggleToc
+  }
 
 
 </script>
+
 </html>
