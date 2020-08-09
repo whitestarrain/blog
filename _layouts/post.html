@@ -14,7 +14,8 @@
   </header>
   <main>
     <div class="container">
-      <div id="table-of-contents" style="position: fixed;right: 30px;top:50%;transform: translateY(-50%);">
+      <div id="table-of-contents"
+        style="position: fixed;right: 30px;top:50%;transform: translateY(-50%);visibility:hidden;">
         <!-- toc生成 -->
         {% include toc.html html=content %}
       </div>
@@ -49,30 +50,32 @@
 </script>
 
 <script>
-  toc = document.getElementById("table-of-contents")
-  header = document.querySelector("header")
-  footer = document.getElementById("footer")
-  toc_ul = document.querySelector("#table-of-contents>ul")
-  min_width =  900 +toc.offsetWidth
-  console.log( window.innerWidth+"---"+min_width)
-  if( window.innerWidth<min_width){
-    toc.style.display = "none"
-  }
-  if (toc_ul != null && window.innerWidth>min_width) {
-    toc_ul.style.height = window.innerHeight * 0.7 + "px"
-    function toggleToc() {
-      if (toc_ul != null) {
-        if (toc.offsetTop + window.scrollY - toc.offsetHeight * 0.5 > header.offsetHeight && toc.offsetTop + window.scrollY + toc.offsetHeight * 0.5 < footer.offsetTop) {
-          toc.className = "fadeIn"
-        } else {
-          toc.className = "fadeOut"
+
+  window.onload = function () {
+    toc = document.getElementById("table-of-contents")
+    header = document.querySelector("header")
+    footer = document.getElementById("footer")
+    toc_ul = document.querySelector("#table-of-contents>ul")
+    min_width = (900 + toc.offsetWidth)
+
+    if (toc_ul != null && window.innerWidth > min_width) {
+      toc_ul.style.height = window.innerHeight * 0.7 + "px"
+      toc.style.visibility= "visible"
+      function toggleToc() {
+        if (toc_ul != null) {
+          if (toc.offsetTop + window.scrollY - toc.offsetHeight * 0.5 > header.offsetHeight && toc.offsetTop + window.scrollY + toc.offsetHeight * 0.5 < footer.offsetTop) {
+            toc.className = "fadeIn"
+          } else {
+            toc.className = "fadeOut"
+          }
         }
       }
+      toggleToc()
+      window.onscroll = toggleToc
     }
-    toggleToc()
-    window.onscroll = toggleToc
-  }
 
+
+  }
 
 </script>
 
