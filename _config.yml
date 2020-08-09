@@ -2,9 +2,9 @@ title: whitestarrain's blog
 author: whitestarrain
 email: kaneki.lusou@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  A growing programmer. The development direction is big data processing, mainly
+  using java and python. Both node.js and c++ are involved but there is no special in-depth study. As
+  a back-end programmer, but also have a soft spot for the front end<
 show_excerpts: true # set to true to show excerpts on the homepage
 baseurl: "/blog"  # 本地访问时要删除
 
