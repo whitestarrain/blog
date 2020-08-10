@@ -52,29 +52,62 @@
 <script>
 
   window.onload = function () {
-    toc = document.getElementById("table-of-contents")
-    header = document.querySelector("header")
-    footer = document.getElementById("footer")
-    toc_ul = document.querySelector("#table-of-contents>ul")
-    min_width = (900 + toc.offsetWidth)
-
-    if (toc_ul != null && window.innerWidth > min_width) {
-      toc_ul.style.height = window.innerHeight * 0.7 + "px"
-      toc.style.visibility= "visible"
-      function toggleToc() {
-        if (toc_ul != null) {
-          if (toc.offsetTop + window.scrollY - toc.offsetHeight * 0.5 > header.offsetHeight && toc.offsetTop + window.scrollY + toc.offsetHeight * 0.5 < footer.offsetTop) {
-            toc.className = "fadeIn"
-          } else {
-            toc.className = "fadeOut"
-          }
-        }
-      }
-      toggleToc()
-      window.onscroll = toggleToc
+    var toc = document.getElementById("table-of-contents")
+    var header = document.querySelector("header")
+    var footer = document.getElementById("footer")
+    var toc_ul = document.querySelector("#table-of-contents>ul")
+    var min_width = (900 + toc.offsetWidth)
+    var toc_li_a = document.querySelectorAll("#table-of-contents a")
+    var top_list = []
+    var a = null
+    var ao = null
+    for (var i = 0; i < toc_li_a.length; i++) {
+      a = toc_li_a[i]
+      ao = document.getElementById((a.getAttribute("href")).substring(1))
+      top_list.push([ao, a])
     }
 
 
+
+
+    // toc自动隐藏和弹出
+    function toggleToc() {
+      if (toc_ul != null) {
+        if (toc.offsetTop + window.scrollY - toc.offsetHeight * 0.5 > header.offsetHeight && toc.offsetTop + window.scrollY + toc.offsetHeight * 0.5 < footer.offsetTop) {
+          toc.className = "fadeIn"
+        } else {
+          toc.className = "fadeOut"
+        }
+      }
+    }
+
+
+    // 显示当前所在条目
+    function tocActive() {
+      for (var i = 0; i < top_list.length; i++) {
+        // 对位于屏幕中的 标题进行检测
+        if (window.scrollY - 5 < top_list[i][0].offsetTop && top_list[i][0].offsetTop < window.scrollY + window.innerHeight) {
+          for (var t = 0; t < top_list.length; t++) {
+            top_list[t][1].className = ""
+          }
+          top_list[i][1].className = "li-active"
+          break
+        }
+      }
+    }
+
+
+
+
+    if (toc_ul != null && window.innerWidth > min_width) {
+
+      toc_ul.style.height = window.innerHeight * 0.7 + "px"
+      toc.style.visibility = "visible"
+
+      toggleToc()
+      window.addEventListener("scroll", toggleToc)
+      window.addEventListener("scroll", tocActive)
+    }
   }
 
 </script>

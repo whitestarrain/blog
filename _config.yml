@@ -52,7 +52,10 @@ texture:
 # Build settings
 # theme: texture
 
+url: "https://whitestarrain.github.io/blog/" # the base hostname & protocol for your site
+
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate # 分页插件
+  - jekyll-sitemap
 
