@@ -13,7 +13,8 @@ class to_url:
     # home_page = "https://imgbb.com"
     # upload_url = "https://imgbb.com/json"
     # token = ""
-    api_url = "https://api.imgbb.com/1/upload"
+    # api_url = "https://api.imgbb.com/1/upload"
+    api_url = "https://cn1.api.wfblog.net/ali.pic.php"
     key = "6ab530ea11787a1577297c059c113960"
     headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
@@ -26,28 +27,37 @@ class to_url:
     #         self.__class__.home_page, headers=self.__class__.headers).content.decode("utf-8")
     #     token = re.findall(r"PF.obj.config.auth_token=\"(\w*)\"", html_str)[0]
     #     self.__class__.token = token
-
     def img_to_url_api(self,path):
         """ 通过api接口上传到图床并返回url """
-        print("正在上传图片-----%s",path)
-
-        # 获得文件名
-        file_name = ""
-        if path.find("/") != -1:
-            file_name = path.split("/")[-1:][0]
-        else:
-            file_name = path.split("\\")[-1:][0]
-        
-        with open(path,"rb") as file:
-            data = {
-                "key":self.__class__.key,
-                "name":file_name,
-                "image":base64.b64encode(file.read())
+        print("正在上传图片-----%s" % path)
+        with open(path,"rb") as file_:
+            file = {
+                "file":file_
             }
-            response = requests.post( self.__class__.api_url, data = data)
+            response = requests.post(self.__class__.api_url,files = file)
         json_o = json.loads(response.content.decode("utf-8"))
-        return json_o["data"]["image"]["url"]
+        return json_o["data"]["url"]
+    # def img_to_url_api(self,path):
+    #     """ 通过api接口上传到图床并返回url """
+    #     print("正在上传图片-----%s",path)
+
+    #     # 获得文件名
+    #     file_name = ""
+    #     if path.find("/") != -1:
+    #         file_name = path.split("/")[-1:][0]
+    #     else:
+    #         file_name = path.split("\\")[-1:][0]
         
+    #     with open(path,"rb") as file:
+    #         data = {
+    #             "key":self.__class__.key,
+    #             "name":file_name,
+    #             "image":base64.b64encode(file.read())
+    #         }
+    #         response = requests.post( self.__class__.api_url, data = data)
+    #     json_o = json.loads(response.content.decode("utf-8"))
+    #     return json_o["data"]["image"]["url"]
+    
 
     # def img_to_url(self, path=""):
     #     """ 将img上传到图床并返回URL。已弃用
@@ -111,7 +121,7 @@ class to_url:
             md_file.seek(0)
             md_file.truncate()
             md_file.write(text)
-        print("***更新文件完成***--%s" % path)
+        print("***更新文件完成***")
 
     def convert_a_file(self,path):
         """ 转换一个文件 """

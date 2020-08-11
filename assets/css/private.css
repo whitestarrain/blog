@@ -16,6 +16,12 @@
 #table-of-contents > ul::-webkit-scrollbar {
     display: none;
 }
+
+#markdown-content a{
+    color: rgb(0, 14, 143);
+    font-weight: 550;
+}
+
 .li-active{
     font-size: 18px;
     color: rgb(0, 0, 0);

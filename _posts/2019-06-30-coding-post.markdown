@@ -3,7 +3,9 @@ layout: post
 title:  "Coding Post"
 description: An example post which shows code rendering.
 date:   2019-06-30 21:03:36 +0530
-categories: Test Jekyll
+categories:
+    - Test
+    - Jekyll
 ---
 为测试文章Lorem ipsum dolor sit amet, 
 
@@ -22,25 +24,25 @@ app.listen(3000)
 ```
 
 - test
-	- test
-	- test
+    - test
+    - test
 
 > adfadfsd
 
 > dfasdf
 
 
-![](https://i.ibb.co/FYqV952/2020-08-06-blog-init-01-jpg.jpg)
+![](https://ae01.alicdn.com/kf/Hab4ab8241952472eb05770491fe56e02L.jpg)
 
 Lorem `data.save` ipsum dolor sit amet, consectetur adipisicing elit. Aliquam qui voluptatem excepturi nemo similique atque sapiente aperiam, dolorum deleniti! Esse quam perferendis temporibus nemo at molestias necessitatibus tenetur cupiditate sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil et voluptatibus non labore officiis assumenda, distinctio perspiciatis blanditiis nesciunt rerum molestias impedit fugiat nulla qui libero minima quasi! Libero, iure.
 
 ```scss
 body {
-	font-family: 'Nunito Sans', sans-serif;
-	line-height: 1.5em;
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.5em;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 ```
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam rerum, ratione impedit necessitatibus facere soluta odio repellat asperiores neque! Sunt iusto quia suscipit amet inventore eum, vel molestiae reiciendis alias.---
@@ -64,23 +66,25 @@ app.listen(3000)
 ```
 
 - test
-	- test
-	- test
+    - test
+    - test
 
 > adfadfsd
 
 > dfasdf
 
 
-![](https://i.ibb.co/FYqV952/2020-08-06-blog-init-01-jpg.jpg)
+![](https://ae01.alicdn.com/kf/Hab4ab8241952472eb05770491fe56e02L.jpg)
 
 Lorem `data.save` ipsum dolor sit amet, consectetur adipisicing elit. Aliquam qui voluptatem excepturi nemo similique atque sapiente aperiam, dolorum deleniti! Esse quam perferendis temporibus nemo at molestias necessitatibus tenetur cupiditate sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil et voluptatibus non labore officiis assumenda, distinctio perspiciatis blanditiis nesciunt rerum molestias impedit fugiat nulla qui libero minima quasi! Libero, iure.
 
 ```scss
 body {
-	font-family: 'Nunito Sans', sans-serif;
-	line-height: 1.5em;
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.5em;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+<img src="https://ae01.alicdn.com/kf/Hab4ab8241952472eb05770491fe56e02L.jpg" alt="2020-08-06-blog-init-01-jpg" border="0">

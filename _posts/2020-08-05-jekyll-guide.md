@@ -1,6 +1,8 @@
 ---
 layout: post
-categories: Jekyll Doc
+categories:
+    - Jekyll
+    - Doc
 type: markdown
 ---
 Jekyll常用配置文档。
