@@ -4,6 +4,7 @@ categories: Jekyll Doc
 type: markdown
 ---
 Jekyll常用配置文档。
+<!-- more -->
 
 > 原文地址戳这里：[原文地址](https://gist.github.com/biezhi/f88be58ef4ae0f3741bb36ab8daa53c5)
 
