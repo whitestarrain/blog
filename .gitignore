@@ -5,4 +5,4 @@ _site
 Gemfile.lock
 .DS_Store
 .jekyll-cache
-imageMapping/images
+images
