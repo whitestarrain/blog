@@ -201,6 +201,7 @@ header {
 	>li {
 		margin-bottom: 20px;
 		padding: 10px;
+		padding-left: 20px;
 		&:not(:last-child) {
 			border-bottom: 1px solid $lightGray;
 		}
@@ -213,8 +214,9 @@ header {
 
 .post-meta {
 	display: flex;
+	flex-direction:column ;
 	justify-content: space-between;
-	align-items: center;
+	align-items:flex-start;
 	a:hover {
 		border-bottom: none;
 	}

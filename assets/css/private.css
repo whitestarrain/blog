@@ -1,7 +1,6 @@
-#table-of-contents  ul {
+#table-of-contents ul {
     padding-left: 20px;
 }
-
 
 #table-of-contents > ul {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
@@ -17,12 +16,12 @@
     display: none;
 }
 
-#markdown-content a{
+#markdown-content a {
     color: rgb(0, 14, 143);
     font-weight: 550;
 }
 
-.li-active{
+.li-active {
     font-size: 18px;
     color: rgb(0, 0, 0);
 }
@@ -30,35 +29,35 @@
 @keyframes fadeInAnimation {
     0% {
         opacity: 0; /*初始状态 透明度为0*/
-        transform: translate(0%,-50%);
+        transform: translate(0%, -50%);
     }
     50% {
         opacity: 0.5;
-        transform: translate(70%,-50%);
+        transform: translate(70%, -50%);
     }
     100% {
         opacity: 1; /*结尾状态 透明度为0*/
-        transform: translate(150%,-50%);
+        transform: translate(150%, -50%);
     }
 }
-@keyframes fadeOutAnimation{
+@keyframes fadeOutAnimation {
     0% {
         opacity: 0; /*初始状态 透明度为0*/
-        transform: translate(150%,-50%);
+        transform: translate(150%, -50%);
     }
     50% {
         opacity: 0.5;
-        transform: translate(70%,-50%);
+        transform: translate(70%, -50%);
     }
     100% {
         opacity: 1; /*结尾状态 透明度为0*/
-        transform: translate(0%,-50%);
+        transform: translate(0%, -50%);
     }
 }
-.fadeOut{
+.fadeOut {
     animation: fadeInAnimation 0.1s 1 linear forwards;
 }
-.fadeIn{
+.fadeIn {
     animation: fadeOutAnimation 0.5s 1 linear forwards;
 }
 
@@ -74,4 +73,9 @@
     vertical-align: -0.25em;
     fill: currentColor;
     overflow: hidden;
+}
+#tagAnddate {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
 }
