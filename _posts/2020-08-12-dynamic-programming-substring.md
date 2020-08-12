@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 序列问题
+title: 最长公共子序列问题
 tags:
 - Python
 - Algorithm
