@@ -134,7 +134,7 @@ class to_url:
             if not i in json_dict:
                 new_image+=1
                 json_dict[i] = self.img_to_url_api(i)
-        json_str = json.dumps(json_dict)
+        json_str = json.dumps(json_dict,indent=4)
         if new_image>0:
             self.update_json_file(json_str)
         self.update_md_file(path,json_dict)

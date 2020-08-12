@@ -1,6 +1,6 @@
 ---
 layout: post
-categories:
+tags:
     - Jekyll
     - Doc
 type: markdown
@@ -236,9 +236,9 @@ permalink: pretty    # => /2009/04/29/slap-chop/index.html
 
 | PERMALINK STYLE | URL TEMPLATE                                 |
 | --------------- | -------------------------------------------- |
-| **date**        | `/:categories/:year/:month/:day/:title.html` |
-| **pretty**      | `/:categories/:year/:month/:day/:title/`     |
-| **none**        | `/:categories/:title.html`                   |
+| **date**        | `/:tags/:year/:month/:day/:title.html` |
+| **pretty**      | `/:tags/:year/:month/:day/:title/`     |
+| **none**        | `/:tags/:title.html`                   |
 
 ### 1.2.10. 分页
 
@@ -310,7 +310,7 @@ Jekyll 模板实际上分两部分：一部分是头部定义，另一部分是[
 
 ### 1.3.1. 头部定义
 
-主要用于指定模板(layout)和定义一些变量，比如：标题(title)、描述(description)、标签(tags)、分类(category/categories)、是否发布(published)，以及其他自定义的变量。
+主要用于指定模板(layout)和定义一些变量，比如：标题(title)、描述(description)、标签(tags)、分类(category/tags)、是否发布(published)，以及其他自定义的变量。
 
 ```
 ---
@@ -320,7 +320,7 @@ date:       date   # 覆盖文章名中的日期
 category:   blog   # 文章的类别
 description: description
 published:  true   # default true 设置 “false” 后，文章不会显示
-permalink:  /:categories/:year/:month/:day/:title.html  # 覆盖全局变量设定的文章发布格式
+permalink:  /:tags/:year/:month/:day/:title.html  # 覆盖全局变量设定的文章发布格式
 ---
 ```
 
@@ -373,7 +373,7 @@ page.title
 | site.collections          | 自定义的对象集合列表，参考[Collections](http://jekyllrb.com/docs/collections/)        |
 | site.data                 | _data 目录下 YAML 文件的数据列表                                                   |
 | site.documents            | 所有 Collections 里面的文档列表                                                   |
-| site.categories.CATEGORY  | 所有在 CATEGORY 类别下的 post 列表                                                |
+| site.tags.CATEGORY  | 所有在 CATEGORY 类别下的 post 列表                                                |
 | site.tags.TAG             | 所有在 TAG 标签下的 post 列表                                                     |
 | site.[CONFIGURATION_DATA] | 其他自定义的变量                                                                 |
 
@@ -387,7 +387,7 @@ page.title
 | page.url        | 不带域名的页面链接，如：`/2008/12/14/my-post.html`                                      |
 | page.date       | 指定每一篇 post 的时间，可在 post 的 front matter 里覆盖这个值，格式是：`date:YYYY-MM-DD HH:MM:SS` |
 | page.id         | 每一篇 post 的唯一标示符(在RSS中非常有用)，如：`/2008/12/14/my-post`                          |
-| page.categories | post 隶属的一个分类列表，可在 YAML 头部指定                                                 |
+| page.tags | post 隶属的一个分类列表，可在 YAML 头部指定                                                 |
 | page.tags       | post 隶属的一个标签列表，可在 YAML 头部指定                                                 |
 | page.path       | 页面的源码地址                                                                     |
 | page.next       | 按时间顺序排列的下一篇文章                                                               |

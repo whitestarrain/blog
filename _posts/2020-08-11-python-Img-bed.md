@@ -1,14 +1,14 @@
 ---
 title: python调用图床替换链接
 layout: post
-categories:
+tags:
     - Python
     - Spider
 description: 博客图片自动上传图床并替换链接,自动完成第三方图床的使用，提高访问速度。
 ---
 
 使用python进行实现。
-在以游客身份通过爬虫方式和登录后使用官方api两种情况下调用了imgbb的api。但最终使用的是阿里图床。imgbb两种面向探索过程。如果单纯想查看调用阿里api请查看ali图床部分
+在以游客身份通过爬虫方式和登录后使用官方api两种情况下调用了imgbb的api。但最终因为上传速度原因使用的是阿里图床。imgbb两种面向探索过程。如果单纯想查看调用阿里api请查看ali图床部分
 
 实现了图床图片url和相对路径url的互换。
 <!-- more -->

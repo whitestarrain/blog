@@ -6,7 +6,7 @@
 		Published on {{ page.date | date: date_format }}
 	</div>
 	<ul class="post-tags" style="overflow: auto;">
-		{%- for tag in page.categories -%}
+		{%- for tag in page.tags -%}
 		<a href="/blog/tags/#{{ tag }}">
 			<li>{{ tag }}</li>
 		</a>

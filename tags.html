@@ -3,8 +3,8 @@ layout: page
 title: whitestarrain's tags
 permalink: /tags/
 ---
-<ul class="categories">
-    {% for tag in site.categories %}
+<ul class="tags">
+    {% for tag in site.tags %}
     <li>
         <a href="#{{ tag[0] }}">{{ tag[0] }}</a> <sup>{{ tag[1].size }}</sup>
     </li>
@@ -12,7 +12,7 @@ permalink: /tags/
 </ul>
 
 <ul class="listing">
-    {% for tag in site.categories %}
+    {% for tag in site.tags %}
     <h2 class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</h2>
     {% for post in tag[1] %}
     <li class="listing-item">

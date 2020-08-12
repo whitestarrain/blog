@@ -13,7 +13,7 @@ baseurl: "/blog"  # 本地访问时要删除
 sass:
   sass_dir: _sass
 
-paginate: 7
+paginate: 5
 paginate_path: "/page:num"
 
 permalink: /posts/:title/
@@ -28,9 +28,9 @@ texture:
     - title: Home
       url: "/blog/"
     - title: My Work
-      url: "/blog/"
+      url: "/blog/#w"
     - title: Resume
-      url: "/blog/"
+      url: "/blog/#a"
     - title: Archives
       url: "/blog/archives/"
     - title: Tags
@@ -58,3 +58,8 @@ plugins:
   - jekyll-paginate # 分页插件
   - jekyll-sitemap
 
+
+exclude:
+    - imageMapping
+    - images
+    - src
