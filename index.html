@@ -38,14 +38,14 @@ layout: home
 
 {%- if site.posts.size > site.paginate -%}
 <!-- 只有在大于单页数量时才出现 -->
-<div style="margin-bottom: 60px;" class="pagination">
+<div class="pagination">
 
 	<!-- 上一页 -->
 	{% if paginator.previous_page %}
 	<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" style="color: black;"
-		class="pagination-newer">&laquo; Prev</a>
+		class="pagination-older">&laquo; Prev</a>
 	{% else %}
-	<a href="javascript:void(0)" style="color: gray;" class="pagination-newer">&laquo; Prev</a>
+	<a href="javascript:void(0)" style="color: gray;" class="pagination-older">&laquo; Prev</a>
 	{% endif %}
 	<span class="pagination-inner">
 
@@ -72,9 +72,9 @@ layout: home
 	<!-- 下一页 -->
 	{% if paginator.next_page %}
 	<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" style="color: black;"
-		class="pagination-older">Next &raquo;</a>
+		class="pagination-newer">Next &raquo;</a>
 	{% else %}
-	<a href="javascript:void(0)" style="color: gray;" class="pagination-older">Next &raquo;</a>
+	<a href="javascript:void(0)" style="color: gray;" class="pagination-newer">Next &raquo;</a>
 	{% endif %}
 
 </div>
@@ -82,12 +82,28 @@ layout: home
 
 
 <script>
+	// 设置点击一块进入链接
 	lis = document.querySelectorAll(".posts>li")
 	for (var i = 0; i < lis.length; i++) {
 		lis[i].onclick = function (e) {
 			this.querySelector(".post-title").click()
 		}
 	}
+
+	// 设置分页条居中，和隐藏
+	posinationDiv = document.querySelector(".pagination")
+	pageNumerList = document.querySelector(".pagination-inner")
+	pageNumerListWidth = pageNumerList.offsetWidth
+	containerWidth=document.querySelector(".container").offsetWidth
+	nextAndOldWidth = (52+16*2+30*2)*2
+	pageNumerList.setAttribute("style","margin-left:"+(containerWidth-nextAndOldWidth-pageNumerListWidth)/2+"px")
+
+	posinationDiv.setAttribute("style","width:"+containerWidth+"px")
+
+	if(window.innerWidth<pageNumerListWidth+nextAndOldWidth){
+		document.querySelector(".pagination-inner").style.display= "none"
+	}
+
 
 </script>
 
