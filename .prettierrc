@@ -1,0 +1,31 @@
+{
+    "semi": false,
+    "overrides": [
+        {
+            "files": ["*.md"],
+            "options": {
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": ["*.java", "*.js", "*.html"],
+            "options": {
+                "tabWidth": 4,
+                "semi": true
+            }
+        },
+        {
+            "files": [".prettierrc", "*.css"],
+            "options": {
+                "tabWidth": 4
+            }
+        },
+        {
+            "files": ["*.js"],
+            "options": {
+                "tabWidth": 4,
+                "singleQuote": true
+            }
+        }
+    ]
+}
