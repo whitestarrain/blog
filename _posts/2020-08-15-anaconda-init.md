@@ -134,3 +134,6 @@ setting.json中添加：
 - conda list ：列出所有包
 - conda env export > environment.yaml ：导出虚拟环境设置
 - conda env create -f environment.yaml：通过配置文件创建虚拟环境
+- conda clean -p      //删除没有用的包
+- conda clean -t      //tar打包
+- conda clean -y -all //删除所有的安装包及cache
