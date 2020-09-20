@@ -3,6 +3,7 @@ layout: post
 title:  "#一点抱怨"
 tags:
     - life
+closeToc: true
 ---
 抱怨而已，没啥可看的。
 

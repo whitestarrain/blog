@@ -14,11 +14,13 @@
   </header>
   <main>
     <div class="container">
-      <div id="table-of-contents"
-        style="position: fixed;right: 30px;top:50%;transform: translateY(-50%);visibility:hidden;">
-        <!-- toc生成 -->
-        {% include toc.html html=content %}
-      </div>
+      {%- unless page.closeToc -%}
+        <div id="table-of-contents"
+          style="position: fixed;right: 30px;top:50%;transform: translateY(-50%);visibility:hidden;">
+          <!-- toc生成 -->
+          {% include toc.html html=content %}
+        </div>
+      {%- endunless -%}
       <div class="post-container" id="markdown-content">
         {{ content }}
       </div>
@@ -53,6 +55,10 @@
 
   window.onload = function () {
     var toc = document.getElementById("table-of-contents")
+    if (toc == null) {
+      // 如果关了toc的话，就不进行后续操作
+      return;
+    }
     var header = document.querySelector("header")
     var footer = document.getElementById("footer")
     var toc_ul = document.querySelector("#table-of-contents>ul")

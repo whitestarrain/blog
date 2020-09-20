@@ -6,6 +6,7 @@ date:   2019-06-30 21:03:36 +0530
 tags:
     - Test
     - Jekyll
+closeToc: true
 ---
 为测试文章Lorem ipsum dolor sit amet, 
 
