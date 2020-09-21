@@ -8,8 +8,10 @@ import os
     避免图床原因导致博客瘫痪
 """
 
+
 class to_url:
 
+    sess = None
     token = ""
     uinfo = ""
     api_url = "https://imgs.acexy.cn/api/imgs/upload"
@@ -30,6 +32,21 @@ class to_url:
     }
 
     def img_to_url_api(self, path):
+        if(self.__class__.sess == None):
+            password = input("请输入密码: ")
+            print("正在登录")
+            sess = requests.session()
+            sess.post(
+                "https://imgs.acexy.cn/api/login",
+                headers=self.__class__.headers,
+                data={
+                    "keepLogged": False,
+                    "password": password,
+                    "username": "78gt"
+                }
+            )
+            self.__class__.sess = sess
+
         """ 通过api接口上传到图床并返回url """
         print("正在上传图片-----%s", path)
 
@@ -46,7 +63,7 @@ class to_url:
             files = {
                 'file': (file_name, data, 'image/jpeg')
             }
-            response = requests.post(
+            response = self.__class__.sess.post(
                 "https://imgs.acexy.cn/api/imgs/upload",
                 headers=self.__class__.headers,
                 cookies=self.__class__.cookies,
@@ -54,7 +71,6 @@ class to_url:
             )
         json_o = json.loads(response.content.decode("utf-8"))
         return json_o["data"][0]["path"]
-
 
     def get_image_path_or_url(self, path):
         """ 获得一个md文件中的图片地址 """
