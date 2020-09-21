@@ -28,7 +28,7 @@ description: 动态规划基础问题入门
     - 将问题分割为小问题，从单个字母开始比较，逐渐扩张到整个字符串（看了解决步骤就明白了）
     - 创建一个二维数组，用来存储每一步的结果。每次填完一行后再填第二行。
 
-> ![](https://ae01.alicdn.com/kf/H06413052d9f347a28f3f9d589ea35490J.jpg)
+> ![](https://source.acexy.cn/view/XSuPFPe)
 
 - 填第一行
     - 第一行第一列`(1,1)` 。表示字符串`f`和字符串`h`公共序列长度
@@ -48,7 +48,7 @@ description: 动态规划基础问题入门
             - 而由`(1,3)`可知， `f`与`hiz`公共子串为0。
             - 结果：0+0=0
 
-> ![](https://ae01.alicdn.com/kf/Hf781b9c6eefd4aac9ec5e0fb79e442e1I.jpg)
+> ![](https://source.acexy.cn/view/XSuPFmy)
 
 - 填`(2,1)`。`fi`与`h`公共子序列长度。
     - i与h不相同，为0
@@ -56,7 +56,7 @@ description: 动态规划基础问题入门
     - `f`与`h`公共子串为0。
     - 结果：0+0=0
 
-> ![](https://ae01.alicdn.com/kf/H7f56b16b8c1f4736a320eac754cb9ce4R.jpg)
+> ![](https://source.acexy.cn/view/XSuPGVb)
 
 - 填`(2,2)`。`fi`和`hi`
     - i与i相同。为 1
@@ -66,7 +66,7 @@ description: 动态规划基础问题入门
     - 结果：1+0=1
     - 即：`(2,2)`值为 `1 + max{ (1,2)的值 , (2,1)的值 } = 1`
 
-> ![](https://ae01.alicdn.com/kf/Hf820369b7cb548d28534df54fa9d11fea.jpg)
+> ![](https://source.acexy.cn/view/XSuPGjc)
 
 - 填第二行剩下的
     - `(2,3)`: `fi`与`hiz`公共子序列长度，
@@ -82,15 +82,15 @@ description: 动态规划基础问题入门
         - 取两者较大值
         - 结果：1+0=1
 
-> ![](https://ae01.alicdn.com/kf/Hd48f54c5bb1a446f8f1c15a63d99a9569.jpg)
+> ![](https://source.acexy.cn/view/XSuPGz+)
 
 - 同样步骤填第三行：
 
-> ![](https://ae01.alicdn.com/kf/H7f374f00379d44dbacedf1a7018a86daV.jpg)
+> ![](https://source.acexy.cn/view/XSuPHEW)
 
 - 第四行：
 
-> ![](https://ae01.alicdn.com/kf/Ha24bc2dbd53d44c292253641ae127edap.jpg)
+> ![](https://source.acexy.cn/view/XSuPHXW)
 
 - 最终结果为2
 
@@ -101,7 +101,7 @@ description: 动态规划基础问题入门
 亲自按照上面的方式算下`fishi`和`hizhii`。是不是出现问题了？先自己仔细想想问题出在那里。
 
 请看此图：
-![](https://ae01.alicdn.com/kf/H5e8e759581d0417594b65e24102766a87.jpg)
+![](https://source.acexy.cn/view/XSuPHo9)
 
 我们按照上面算法一步步得做，最终却出现了问题： **算法告诉我们填2，但大脑告诉我们填1**
 
@@ -115,14 +115,14 @@ description: 动态规划基础问题入门
 > 这依旧是动态规划，只是每步的计算方式有些变化而已
 
 有一个方式可以避免多次相同带来的问题：就是：**看左上方的数值**
-![](https://ae01.alicdn.com/kf/H6dacb71dfd434f92bd376f13b1edf694p.jpg)
+![](https://source.acexy.cn/view/XSuPH2k)
 
 而字符不相同的，就选取左边或上边的最大值。相当于：
-![](https://ae01.alicdn.com/kf/H33917af9527143528f90cc8c4e3af156U.jpg)
+![](https://source.acexy.cn/view/XSuPIBW)
 
 
 最终算法：
-![](https://ae01.alicdn.com/kf/H6712ea90fc214abf9a5e27efa144f7a6C.jpg)
+![](https://source.acexy.cn/view/XSuPIOO)
 
 # 5. 代码示例
 
