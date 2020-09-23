@@ -26,10 +26,6 @@ class to_url:
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-CN,zh;q=0.9,ja;q=0.8"
     }
-    cookies = {
-        "token": "05f62c53a765936f1733e7e29a31e2e7",
-        "uinfo": "%7B%22id%22:%225f673d6fd438490bb75da61a%22,%22username%22:%2278gt%22%7D"
-    }
 
     def img_to_url_api(self, path):
         if(self.__class__.sess == None):
@@ -65,8 +61,6 @@ class to_url:
             }
             response = self.__class__.sess.post(
                 "https://imgs.acexy.cn/api/imgs/upload",
-                headers=self.__class__.headers,
-                cookies=self.__class__.cookies,
                 files=files
             )
         json_o = json.loads(response.content.decode("utf-8"))
