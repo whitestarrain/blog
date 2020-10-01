@@ -61,7 +61,7 @@ figcaption {
 
 header {
 	// background-size: cover;
-	padding: 120px 0 40px;
+	padding: 120px 0 70px;
 	color: #fff;
 	overflow: hidden;
 	h2 {
@@ -103,7 +103,7 @@ header {
 //
 .container {
 	margin:0 150px;
-	max-width: 720px;
+	max-width: 820px;
 
 	div.highlighter-rouge {
 		right: 150px;
@@ -272,4 +272,5 @@ blockquote{
 	background-color: rgba(74, 137, 253, 0.116);
 	border-left: 7px solid rgb(160, 160, 160);
 	padding-left: 4px;
+	margin-left: 0px;
 }

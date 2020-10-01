@@ -43,8 +43,9 @@ description: Anaconda+vscode基础环境搭建
 查看Anaconda Prompt (anaconda3)的目标:
 ![](https://source.acexy.cn/view/XSuPIqA)
 
-- 目标代码： `%windir%\System32\cmd.exe "/K" D:\learn\anaconda3\Scripts\activate.bat D:\learn\anaconda3`
+- 目标 属性： `%windir%\System32\cmd.exe "/K" D:\learn\anaconda3\Scripts\activate.bat D:\learn\anaconda3`
 - 分析
+    - && 用来连接顺序执行的命令
     - %windir%\System32\cmd.exe为cmd所在位置
         - %windir%：指向Windows目录，一般为C:\Windows
     - cmd /k dir 是执行完dir命令后不关闭命令窗口。 
