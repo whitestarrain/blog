@@ -16,4 +16,29 @@
 	<div id="busuanzi_container_page_pv">
 		Amount Of Article Reading: <span id="busuanzi_value_page_pv" style="padding: 0 10px;"></span>times
 	</div>
+
+	<ul class="social" style="margin-top: 10px;">
+		{%- if site.texture.social_links.github -%}
+			<a href="{{ site.texture.social_links.github }}"><li><i class="icon-github-circled"></i></li></a>
+		{%- endif -%}
+		{%- if site.texture.social_links.linkedIn -%}
+			<a href="{{ site.texture.social_links.linkedIn }}"><li><i class="icon-linkedin-squared"></i></li></a>
+		{%- endif -%}
+		{%- if site.texture.social_links.twitter -%}
+			<a href="{{ site.texture.social_links.twitter }}"><li><i class="icon-twitter-squared"></i></li></a>
+		{%- endif -%}
+		{%- if site.texture.social_links.mail -%}
+		{%- endif -%}
+		{%- if site.texture.social_links.mail -%}
+			<a href="mailto:{{site.texture.social_links.mail}}?subject=The%20problem%20of%20{{page.title}}">
+				<li>
+					<i>
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-youjian"></use>
+						</svg>
+					</i>
+				</li>
+			</a>
+		{%- endif -%}
+	</ul>
 </div>

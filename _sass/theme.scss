@@ -89,6 +89,22 @@ header {
 				&:hover {
 					color: $gray;
 				}
+				svg{
+					border-style: solid;
+					border-color: white;
+					color: black;
+					background-color: white;
+					height: 1em;
+					width: 1em;
+					margin-right: 7px;
+					border-radius: 50%;
+					&:hover {
+						background-color: $gray;
+						border-color: $gray;
+					}
+					@include fluidType(26px, 34px);
+					transition: all .3s;
+				}
 			}
 		}
 	}
@@ -165,7 +181,7 @@ header {
 	color: #ddd;
 
 	margin-top:.5em;
-	margin-bottom: 1.3em;
+	margin-bottom: .5em;
 }
 
 .post-date {

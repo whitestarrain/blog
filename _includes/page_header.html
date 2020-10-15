@@ -18,5 +18,16 @@
 		{%- if site.texture.social_links.twitter -%}
 			<a href="{{ site.texture.social_links.twitter }}"><li><i class="icon-twitter-squared"></i></li></a>
 		{%- endif -%}
+		{%- if site.texture.social_links.mail -%}
+			<a href="mailto:{{site.texture.social_links.mail}}?subject=The%20problem%20of%20{{page.title}}">
+				<li>
+					<i>
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-youjian"></use>
+						</svg>
+					</i>
+				</li>
+			</a>
+		{%- endif -%}
 	</ul>
 </div>

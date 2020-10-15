@@ -2,7 +2,7 @@
 layout: post
 title:  "Coding Post"
 description: An example post which shows code rendering.
-date:   2019-06-30 21:03:36 +0530
+date:   2020-08-04 21:03:36 +0530
 tags:
     - Test
     - Jekyll
@@ -31,7 +31,6 @@ app.listen(3000)
 > adfadfsd
 
 > dfasdf
-
 
 ![](https://source.acexy.cn/view/XSuPBGR)
 

@@ -321,7 +321,15 @@ pip install jupyter notebook
 
 # 3. jupyter lab 简单配置
 
-仿照 jupyter notebook ，查看 jupyter lab -h，阅读配置项。指定 jupyter lab 的配置路径（默认使用~/.jupyter/lab 文件夹，无法多环境配置）
+jupyter lab 的配置路径默认使用`~/.jupyter/lab` 文件夹，此处只说明如何指定配置文件家路径。
+
+仿照 jupyter notebook ，查看 jupyter lab -h，阅读配置项。提醒：单纯使用`-h`选项无法找到指定配置文件夹所对应的选项，可以使用：
+- `jupyter lab --help-all`查看所有帮助
+- `jupyter lab --generate-config`生成默认配置文档，里面可以查看所有配置项
+
+两个配置：
+- `--LabApp.user_settings_dir`:配置文件夹
+- `--LabApp.workspaces_dir`:环境目录文件夹
 
 可仿照下面文件自行配置
 
