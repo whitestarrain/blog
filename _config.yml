@@ -54,10 +54,17 @@ excerpt_separator: <!-- more -->
 # Build settings
 # theme: texture
 
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate # 分页插件
   - jekyll-sitemap
+    # - rouge
 
 
 exclude:
