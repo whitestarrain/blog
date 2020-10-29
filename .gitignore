@@ -6,3 +6,5 @@ Gemfile.lock
 .DS_Store
 .jekyll-cache
 images
+image_password
+*.swp

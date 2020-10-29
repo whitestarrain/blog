@@ -26,11 +26,11 @@
   background-color: #e3d2d2;
 }
 .highlight .gd {
-  color: #000000;
+  color: #665509;
   background-color: #ffdddd;
 }
 .highlight .ge {
-  color: #000000;
+  color: #042458;
   font-style: italic;
 }
 .highlight .gr {
@@ -63,19 +63,19 @@
   font-weight: bold;
 }
 .highlight .kd {
-  color: #000000;
+  color:#815DD0;
   font-weight: bold;
 }
 .highlight .kn {
-  color: #000000;
+  color: #181c53;
   font-weight: bold;
 }
 .highlight .kp {
-  color: #000000;
+  color: #550707;
   font-weight: bold;
 }
 .highlight .kr {
-  color: #000000;
+  color: #136608;
   font-weight: bold;
 }
 .highlight .kt {

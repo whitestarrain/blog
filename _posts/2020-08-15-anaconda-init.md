@@ -107,7 +107,7 @@ activate learn_python
 3. 选择工作空间以及对应解析器
 ![](https://source.acexy.cn/view/XSuPJNp)
 
-此时，ctrl+shift+` 新建终端，会发现自动进入虚拟环境。
+此时，`ctrl+shift+` 新建终端，会发现自动进入虚拟环境。
 程序执行时也会在指定虚拟环境中执行。
 ![](https://source.acexy.cn/view/XSuPJru)
 
@@ -124,6 +124,7 @@ setting.json中添加：
 ```
 # 3. 常用命令
 
+- conda -h：用好它后面的就不用看了
 - activate：切换到base环境
 - conda create -n learn_python python=3： 创建一个名为learn_python的环境并指定python版本为3(的最新版本)
 - conda remove -n learn_python --all： 删除learn_python环境及下属所有包
