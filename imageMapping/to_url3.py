@@ -44,7 +44,7 @@ class to_url:
             self.__class__.sess = sess
 
         """ 通过api接口上传到图床并返回url """
-        print("正在上传图片-----%s", path)
+        print("正在上传图片-----%s" % path)
 
         # 获得文件名
         file_name = ""
