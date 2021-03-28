@@ -27,14 +27,16 @@ texture:
   navigation:
     - title: Home
       url: "/blog/"
-    - title: My Work
-      url: "/blog/#w"
+#    - title: My Work
+#      url: "/blog/#w"
     - title: Resume
       url: "/blog/#a"
     - title: Archives
       url: "/blog/archives/"
     - title: Tags
       url: "/blog/tags/"
+    - title: MindMap
+      url: "/blog/brain/"
 
   # generate social links in footer
   social_links:
