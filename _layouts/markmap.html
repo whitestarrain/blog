@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>YourBrain</title>
+    <link rel="icon" type="image/x-icon" href="/blog/favicon.ico" />
+    <style>
+        html,
+        body,
+        svg,
+        .markmap {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: RGB(227, 237, 205);
+        }
+    </style>
+</head>
+
+<body>
+    {%- include tip.html -%}
+    <div class="markmap" id="MarkMap"></div>
+    <!-- follow the instruction from https://github.com/gera2ld/markmap/tree/master/packages/markmap-autoloader#markmap-autoloader -->
+    <script>
+        window.markmap = {
+            autoLoader: { manual: true },
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+    <script>
+        //render markmap in the div
+        const renderMap = function (str) {
+            const dst = document.getElementById("MarkMap");
+            dst.innerHTML = str;
+            markmap.autoLoader.renderAll();
+        };
+
+        async function main() {
+            const url = new URL(document.location);
+            let text = "";
+            const reqUrl = "{{page.mdUrl}}"
+            const req = new Request(reqUrl);
+            const res = await fetch(req);
+            text = await res.text();
+            renderMap(text);
+        }
+        main().catch((e) => console.error(e));
+    </script>
+</body>
+
+</html>
