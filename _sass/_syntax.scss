@@ -4,7 +4,7 @@ div.highlighter-rouge {
 	// width: 100vw;
 	// position: relative;
 	right: 150px;
-	margin: 40px 0;
+	margin: 20px 0;
 }
 
 .highlight {
@@ -12,7 +12,8 @@ div.highlighter-rouge {
 }
 
 div.highlight {
-	padding: 10px 30px 10px;
+	padding: 10px 10px 10px;
+  border-radius: 6px;
 }
 
 pre.highlight, code {
@@ -20,6 +21,11 @@ pre.highlight, code {
 	line-height: 1.4em;
 	tab-size: 4;
 	background-color: #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left:7px;
+  padding-right:7px;
+  border-radius: 6px;
 }
 .language-plaintext{
 	background-color: #F3F4F4;

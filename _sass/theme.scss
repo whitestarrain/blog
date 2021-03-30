@@ -18,7 +18,7 @@ $lightGray: #eee;
 
 body {
 	font-family: 'Nunito Sans', sans-serif;
-	@include fluidType(16px, 17px);
+	@include fluidType(15px, 16px);
 	line-height: 1.55em;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
@@ -166,7 +166,7 @@ header {
 	}
 }
 #container-of-postlayout{
-	max-width: 920px;
+	max-width: 870px;
 }
 
 .post-title {
@@ -293,3 +293,11 @@ blockquote{
 	padding-left: 4px;
 	margin-left: 0px;
 }
+
+/*summary样式*/
+
+summary{
+  cursor: pointer;
+  display: list-item;
+}
+

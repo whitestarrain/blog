@@ -6,8 +6,9 @@ tags:
 ---
 
 说明：此文件只是个人 git 常用指令的粗略整理，如果想要了解与学习原理及指令的话推荐去看 git 官方用户文档。十分推荐
-
 [文档地址](https://git-scm.com/book)
+
+另外还有一个[git学习网站](https://learngitbranching.js.org/?locale=zh_CN)
 <!-- more -->
 
 # 1. 日常使用

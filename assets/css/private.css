@@ -66,6 +66,9 @@
         0 2px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 18px;
 }
+.shadow p{
+  font-size: 17px;
+}
 
 .icon {
     width: 1.3em;
