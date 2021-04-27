@@ -2,8 +2,9 @@
 title: jupyter插件及其他配置与说明
 layout: post
 tags:
-  - Python
+  - python
   - jupyter
+
 ---
 
 jupyter 的基本配置，各配置文件和配置路径的说明。<br>

@@ -2,8 +2,10 @@
 layout: post
 title: "mapreduce源码分析-1"
 tags:
-  - hadoop
+  - mapreduce
+  - src
 closeToc: true
+
 ---
 
 自定义一个 wordcount 的 job，并藉此深入源码。<br>

@@ -2,8 +2,9 @@
 title: Anaconda+vscode环境搭建
 layout: post
 tags:
-- Python
+  - python
 description: Anaconda+vscode基础环境搭建
+
 ---
 
 记录Anaconda的安装过程和基础命令，并通过vscode调用Anaconda创建的虚拟环境。

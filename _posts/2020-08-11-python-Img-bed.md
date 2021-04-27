@@ -2,9 +2,10 @@
 title: python调用图床替换链接
 layout: post
 tags:
-    - Python
-    - Spider
+    - python
+    - spider
 description: 博客图片自动上传图床并替换链接,自动完成第三方图床的使用，提高访问速度。
+
 ---
 
 使用python进行实现。

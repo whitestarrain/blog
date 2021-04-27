@@ -4,9 +4,10 @@ title:  "Coding Post"
 description: An example post which shows code rendering.
 date:   2020-08-04 21:03:36 +0530
 tags:
-    - Test
-    - Jekyll
+    - test
+    - jekyll
 closeToc: true
+
 ---
 为测试文章Lorem ipsum dolor sit amet, 
 

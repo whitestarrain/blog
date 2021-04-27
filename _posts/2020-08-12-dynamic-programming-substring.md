@@ -2,9 +2,10 @@
 layout: post
 title: 最长公共子序列问题
 tags:
-- Python
-- Algorithm
+  - python
+  - algorithm
 description: 动态规划基础问题入门
+
 ---
 动态规划基础问题入门
 

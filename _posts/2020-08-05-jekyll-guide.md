@@ -1,9 +1,10 @@
 ---
 layout: post
 tags:
-    - Jekyll
-    - Doc
+    - jekyll
+    - doc
 type: markdown
+
 ---
 Jekyll常用配置文档。
 <!-- more -->
