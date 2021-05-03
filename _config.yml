@@ -36,12 +36,13 @@ texture:
     - title: Tags
       url: "/blog/tags/"
     - title: MindMap
-      url: "/blog/brain/"
+      # url: "/blog/brain/"
+      url: "https://whitestarrain.github.io/Note/YourBrain.html"
 
   # generate social links in footer
   social_links:
     # twitter: https://twitter.com/qS5DNI9AnIqygQs
-    github:  https://github.com/whitestarrain
+    github: https://github.com/whitestarrain
     mail: kaneki.lusou@gmail.com
     linkedIn: 
     rss: rss
