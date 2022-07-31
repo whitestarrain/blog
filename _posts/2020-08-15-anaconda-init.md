@@ -3,6 +3,7 @@ title: Anaconda+vscode环境搭建
 layout: post
 tags:
   - python
+  - conda
 description: Anaconda+vscode基础环境搭建
 
 ---
