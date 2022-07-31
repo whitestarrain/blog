@@ -7,8 +7,8 @@ tags:
   - lua
 ---
 
-我编辑笔记，写博客，写一些代码等已经从 vscode 转移到 nvim 上很久了。
-其中 vscode 有一个为 markdown 标题编号的插件[auto-markdown-toc](https://marketplace.visualstudio.com/items?itemName=huntertran.auto-markdown-toc)用了挺长时间，我会搭配 chrome 上自带侧边栏的[markdown viewer](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)插件浏览自己的 markdown 笔记。
+个人编辑笔记，写博客，写一些代码等已经从 vscode 转移到 nvim 上很久了。  
+其中 vscode 有一个为 markdown 标题编号的插件[auto-markdown-toc](https://marketplace.visualstudio.com/items?itemName=huntertran.auto-markdown-toc)用了挺长时间，一般会搭配 chrome 上自带侧边栏的[markdown viewer](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)插件浏览自己的 markdown 笔记。
 但是 vim 上找了许久，也没有找到为标题编号的插件。这两天看了一下 nvim 的接口，用 lua 写了一个插件实现了功能。简单记录一下。
 
 **_:help 与你同在_**
@@ -21,7 +21,7 @@ tags:
 主要问题出在 vscode 的 vim 插件上，当然也不排除轻薄本 cpu 太差的原因。
 
 - 在编辑文件时，如果一直按下，松手之后，还能看见光标跑一会儿
-  - 可能是我调快了一些按住键盘后重复输入字符频率导致的
+  - 可能是在调快了按住键盘后重复输入字符频率导致的
 - 在编辑大文件，如 1000+行的 markdown 时，编辑的延迟非常大，光标的移动速度和编辑位置也非常容易和实际操作对不上。
   - 体验异常之差
 - 在格式化文件后，使用`u`的时候，vscode 的 vim 插件会一步一步得撤销格式化。
@@ -142,12 +142,12 @@ let &runtimepath = &runtimepaht .. "," .. "<path_to_plugin>"
 当前(2022-06)使用较多的 vimscript 实现的插件管理器为`vim-plug`，而使用较多的 lua 实现的的插件管理器为`packer.nvim`，
 两者都可以加载 vimscript 实现的插件以及 lua 实现的插件。可以根据自己喜好进行选择。
 
-我个人使用的是`vim-plug`，使用 autocmd 的方式，将每个的插件安装命令和插件的配置脚本放到一个脚本文件中，
+个人使用的是`vim-plug`，使用 autocmd 的方式，将每个的插件安装命令和插件的配置脚本放到一个脚本文件中，
 再通过自定义命令`LoadScript`和`LoadLua`的方式指定要在加载的插件。
 
-详情可以参考我的[`dotfiles`](https://github.com/whitestarrain/dotfiles)。
+详情可以参考个人的[`dotfiles`](https://github.com/whitestarrain/dotfiles)。
 
-我不清楚`packer.nvim`是否可以实现这种效果(`startup`是否可以调用多次)，并且有些 vim 实现的插件用 lua 配置起来也不是很方便，
+个人不清楚`packer.nvim`是否可以实现这种效果(`startup`是否可以调用多次)，并且有些 vim 实现的插件用 lua 配置起来也不是很方便，
 也就还没有转到`packer.nvim`，有时间再折腾。
 
 ### vim 内置插件包管理方法
@@ -162,26 +162,26 @@ let &runtimepath = &runtimepaht .. "," .. "<path_to_plugin>"
 
 可能自动加载的 lua 脚本有两种，一种是`init.lua`，用来代替`init.vim`，且无法与`init.vim`共同存在(`:help init.lua`)。
 
-`init.lua` 文件是完全可选的。Neovim 仍然支持从 init.vim 加载配置，且Neovim 的一些功能还没有 100% 暴露给 Lua 模块部分。
+`init.lua` 文件是完全可选的。Neovim 仍然支持从 init.vim 加载配置，且 Neovim 的一些功能还没有 100% 暴露给 Lua 模块部分。
 
 ### lua 模块
 
-在lua脚本中，使用`require('module)`会从`runtimepath/lua/`下寻找lua脚本(`help lua-require`)。可以看作lua版本的`autoload`。
+在 lua 脚本中，使用`require('module)`会从`runtimepath/lua/`下寻找 lua 脚本(`help lua-require`)。可以看作 lua 版本的`autoload`。
 
-同时，与vimscript很像，前面提到的`plugin`,`indent`等特殊目录下的lua脚本也会被自动加载，只不过vim脚本会先于lua脚本加载。
+同时，与 vimscript 很像，前面提到的`plugin`,`indent`等特殊目录下的 lua 脚本也会被自动加载，只不过 vim 脚本会先于 lua 脚本加载。
 
-### 模块下的init.lua
+### 模块下的 init.lua
 
 在文件夹下如果包括`init.lua`的话，可以直接引用该文件夹而不必指定该文件的名称，
-这是nvim中加载lua的特性，一般的lua解析器并没有这种模块加载方式。
+这是 nvim 中加载 lua 的特性，一般的 lua 解析器并没有这种模块加载方式。
 
 插件[`nvim-tree.nvim`](https://github.com/kyazdani42/nvim-tree.lua)中就有使用这种方式加载模块。
 
 # vim 插件的 lua 开发环境
 
-windows 上终端开发环境的配置其实以前就开始写了，写了 1/4 之后时间原因就一直放着，近期我尽量写完放上来。
+windows 上终端开发环境的配置其实以前就开始写了，写了 1/4 之后时间原因就一直放着，近期尽量写完放上来。
 
-这里只对lua开发环境搭建进行一下简单说明。
+这里只对 lua 开发环境搭建进行一下简单说明。
 
 ![2022-06-24-nvim-lua-plugin-md_section_number](https://source.acexy.cn/view/YJTNnqQ)
 
@@ -189,15 +189,15 @@ windows 上终端开发环境的配置其实以前就开始写了，写了 1/4 �
 - 文件浏览：nvim-tree
 - 内部终端：[floaterm](https://github.com/voldikss/vim-floaterm)
 - lua lsp:[sumneko_lua](https://github.com/sumneko/lua-language-server)
-- nvim内置lsp api配置：[nivm-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- nvim自动补全：[nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- nvim内置lua api补全：[lua-dev.nvim](https://github.com/folke/lua-dev.nvim)
-  - lua-dev是对sumneko_lua进行了包装，把nvim的api信息提供给lsp
-  - 也可以使用[cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)，但改插件只会提示字段名称，并不会有文档提示以及hover提示等。
+- nvim 内置 lsp api 配置：[nivm-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- nvim 自动补全：[nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- nvim 内置 lua api 补全：[lua-dev.nvim](https://github.com/folke/lua-dev.nvim)
+  - lua-dev 是对 sumneko_lua 进行了包装，把 nvim 的 api 信息提供给 lsp
+  - 也可以使用[cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)，但改插件只会提示字段名称，并不会有文档提示以及 hover 提示等。
 - 实时脚本测试执行插件：[nvim-luapad](https://github.com/rafcamlet/nvim-luapad)
-  - 实时执行输入的lua脚本(相当于文件修改时便执行一次luafile)，并将执行结果显示在编辑界面上
-  - 提供新开`luapad`，以及toggle luapad等api进行使用。
-  - 测试一些语法或api，以及调试一些方法的时候特别好用。
+  - 实时执行输入的 lua 脚本(相当于文件修改时便执行一次 luafile)，并将执行结果显示在编辑界面上
+  - 提供新开`luapad`，以及 toggle luapad 等 api 进行使用。
+  - 测试一些语法或 api，以及调试一些方法的时候特别好用。
 
   ![](https://source.acexy.cn/view/YJTNoSS)
 
@@ -205,8 +205,9 @@ windows 上终端开发环境的配置其实以前就开始写了，写了 1/4 �
   -- lua脚本中添加改句，确保luapad可以查找到当前文件夹下的模块。
   package.path = package.path .. ";./?.lua" .. ";./lua/?.lua"
   ```
+
 - 插件测试
-  - vim中执行该行保证可以查找到当前文件夹下的lua模块
+  - vim 中执行该行保证可以查找到当前文件夹下的 lua 模块
 
     ```vim
     let &runtimepath.="," . getcwd()
@@ -215,14 +216,14 @@ windows 上终端开发环境的配置其实以前就开始写了，写了 1/4 �
 
 # vim 的常用 lua 接口说明
 
-neovim暴露了一个全局变量`vim`来作为lua调用vim api的入口。按照`help lua.txt`进行划分，一些常用的函数和子模块如下：
+neovim 暴露了一个全局变量`vim`来作为 lua 调用 vim api 的入口。按照`help lua.txt`进行划分，一些常用的函数和子模块如下：
 
-- `:h lua-stdlib`:一些lua的“标准库”，包括一些函数和子模块
+- `:h lua-stdlib`:一些 lua 的“标准库”，包括一些函数和子模块
   - `vim.regex`: 在 Lua 中使用 Vim 正则表达式
   - `vim.loop`: Neovim 的 event lopp 模块（使用 LibUV)
-  - `vim.api`: 暴露 vim 的 API(:h API) 的模块（别的远程调用也是调用同样的 API)。包括获取与修改buffer内容，添加，删除高亮等。
-  - `vim.fn`: 暴露一些vim的内建函数。(:h eval.txt)
-- `:h lua-vim`：主要提供一些通用lua的方法，比如`startwith`,`deepcopy`,`list_slice`等。
+  - `vim.api`: 暴露 vim 的 API(:h API) 的模块（别的远程调用也是调用同样的 API)。包括获取与修改 buffer 内容，添加，删除高亮等。
+  - `vim.fn`: 暴露一些 vim 的内建函数。(:h eval.txt)
+- `:h lua-vim`：主要提供一些通用 lua 的方法，比如`startwith`,`deepcopy`,`list_slice`等。
   - `vim.inspect`: 把 Lua 对象以更易读的方式打印（在打印 Lua table 时会很有用）
 - `:h lua-ui`
   - `vim.ui`: 可被插件覆写的 UI 相关函数
@@ -230,7 +231,7 @@ neovim暴露了一个全局变量`vim`来作为lua调用vim api的入口。按�
   - `vim.lsp`: 控制内置 LSP 客户端的模块
 - `:h treesitter.txt`
   - `vim.treesitter`: 暴露 tree-sitter 库中一些实用函数的模块
-- `:h lua-uri`: 提供一些uri的转换操作，比如`buf编号<->uri`,`文件路径<->uri`等
+- `:h lua-uri`: 提供一些 uri 的转换操作，比如`buf编号<->uri`,`文件路径<->uri`等
   - `vim.uri_xxxxxxxx`
 - `:h lua-filetype`
   - `vim.filetype.match()`
@@ -240,12 +241,12 @@ neovim暴露了一个全局变量`vim`来作为lua调用vim api的入口。按�
 
 # 插件实现
 
-## lua的面向对象
+## lua 的面向对象
 
-lua的面向对象是通过lua中的table，functino以及table的`metatable`模拟出来的
+lua 的面向对象是通过 lua 中的 table，functino 以及 table 的`metatable`模拟出来的
 
-table中可以设置k-v作为成员变量，设置function作为方法。
-然后使用一个table作为创建其他table的模板，也就是类。
+table 中可以设置 k-v 作为成员变量，设置 function 作为方法。
+然后使用一个 table 作为创建其他 table 的模板，也就是类。
 
 ```lua
 -- 定义Stack '类'
@@ -287,7 +288,7 @@ end
 return Stack
 ```
 
-有一处需要注意，下面的代码通过metatable的方式，保证new出来的新table，调用方法时，可以从充当类的表Stack中获得到方法。
+有一处需要注意，下面的代码通过 metatable 的方式，保证 new 出来的新 table，调用方法时，可以从充当类的表 Stack 中获得到方法。
 
 ```lua
 Stack.__index = Stack
@@ -331,7 +332,7 @@ end
 
 ### parser
 
-首先需要找到markdown标题，lua中没有原生支持正则表达式，因此这里使用lua的模式匹配。
+首先需要找到 markdown 标题，lua 中没有原生支持正则表达式，因此这里使用 lua 的模式匹配。
 
 ```lua
 M.heading_pattern = "^#+ "
@@ -344,14 +345,15 @@ end
 
 同时需要跳过注释以及代码块中的符合标题模式的行。
 
-```lua
+````lua
 -- 定义需要忽略的 包围pair
 M.ignore_pairs = {
   { "```", "```" },
   { "\\~\\~\\~", "\\~\\~\\~" },
   { "<!--", "-->" },
 }
-```
+````
+
 ```lua
 for line_number, line in ipairs(all_lines) do
   for pair_index, pair in ipairs(M.ignore_pairs) do
@@ -362,7 +364,7 @@ for line_number, line in ipairs(all_lines) do
       -- pair出栈或入栈
     else
       -- pair出栈或入栈
-    end 
+    end
     end
   end
 ```
@@ -398,7 +400,7 @@ for i = 1, #heading_lines do
     如: # 1
         ## 1.1
         ## 1.2
-        # 2 
+        # 2
     1.2 -> 2 时，级别变小，在原来的基础(1)上递增得到2
   ]]
   if heading_lines[i][3] < heading_lines[i - 1][3] then
@@ -432,7 +434,7 @@ end
 
 ### 插件配置
 
-提供setup方法进行插件的自定义配置。
+提供 setup 方法进行插件的自定义配置。
 
 ```lua
 -- md_section_number.lua
@@ -444,6 +446,7 @@ end
 ```
 
 默认配置为：
+
 ```lua
 require("md_section_number").setup({
   max_level = 4, -- 只为heading level小于等于4的标题添加编号。
@@ -455,14 +458,14 @@ require("md_section_number").setup({
 })
 ```
 
-设置文件filetype：
+设置文件 filetype：
 
 ```vim
 " ftdetect/markdown.vim
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn,mdx} set filetype=markdown
 ```
 
-在markdown文件下设置command方便调用：
+在 markdown 文件下设置 command 方便调用：
 
 ```vim
 " ftplugin/markdown.vim
