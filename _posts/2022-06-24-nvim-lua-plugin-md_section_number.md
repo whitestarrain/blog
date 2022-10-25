@@ -288,7 +288,7 @@ end
 return Stack
 ```
 
-有一处需要注意，下面的代码通过 metatable 的方式，保证 new 出来的新 table，调用方法时，可以从充当类的表 Stack 中获得到方法。
+有一处需要注意，下面的代码通过 metatable 的方式保证 new 出来的新 table在调用方法时，可以从充当类的表 Stack 中获得到方法。
 
 ```lua
 Stack.__index = Stack
