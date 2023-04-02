@@ -11,6 +11,8 @@ tags:
 其中 vscode 有一个为 markdown 标题编号的插件[auto-markdown-toc](https://marketplace.visualstudio.com/items?itemName=huntertran.auto-markdown-toc)用了挺长时间，一般会搭配 chrome 上自带侧边栏的[markdown viewer](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)插件浏览自己的 markdown 笔记。
 但是 vim 上找了许久，也没有找到为标题编号的插件。这两天看了一下 nvim 的接口，用 lua 写了一个插件实现了功能。简单记录一下。
 
+插件地址：[md-section-number](https://github.com/whitestarrain/md-section-number.nvim)
+
 **_:help 与你同在_**
 
 <!-- more -->
