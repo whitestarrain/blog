@@ -37,7 +37,7 @@ texture:
       url: "/blog/tags/"
     - title: MindMap
       # url: "/blog/brain/"
-      url: "https://whitestarrain.github.io/Note/YourBrain.html"
+      url: "/blog/brain/"
 
   # generate social links in footer
   social_links:
