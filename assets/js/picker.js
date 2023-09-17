@@ -7,7 +7,7 @@ window.onload = function() {
 	const $picker = document.querySelector('#texture-picker');
 	const $hidePicker = document.querySelector('#hidePicker');
 	const $header = document.querySelector('header');
-	
+
 	$picker.onclick = function(e) {
 		const textureName = e.target.id;
 		if (textureName && textureName != 'texture-picker' && textureName != 'hidePicker') {
@@ -16,6 +16,6 @@ window.onload = function() {
 	}
 
 	$hidePicker.onclick = function () {
-		$picker.style['display'] = 'none';	
+		$picker.style['display'] = 'none';
 	}
 }
