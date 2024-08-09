@@ -8,4 +8,7 @@ gem 'jekyll-seo-tag' # meta 生成
 gem 'jekyll-sitemap' # 站点地图生成
 gem 'kramdown'
 gem 'rouge'
+
+# for archlinux (https://github.com/jekyll/jekyll/issues/9545)
+gem 'json'
 gemspec

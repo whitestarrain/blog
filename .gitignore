@@ -7,3 +7,5 @@ Gemfile.lock
 .jekyll-cache
 image_password
 *.swp
+vendor
+
