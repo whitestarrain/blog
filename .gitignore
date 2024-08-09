@@ -1,11 +1,11 @@
 *.gem
-.bundle
-.sass-cache
-_site
-Gemfile.lock
-.DS_Store
-.jekyll-cache
-image_password
 *.swp
+.DS_Store
+.bundle
+.jekyll-cache
+.sass-cache
+Gemfile.lock
+_site
+image_password
 vendor
 
