@@ -61,23 +61,23 @@ tags:
   - 反汇编( disassembler ) --- 将机器语言反汇编为汇编语言
  
 - 流程：
-  > ![compile-1](https://source.acexy.cn/view/ZDU15rG)
+  > ![compile-1](../_images/compile-1.png)
 
 - 编译程序与解释程序的主要区别:
   - 编译程序(compiler)
     - 是一种翻译程序，
     - 它特指把某种高级程序设计语言翻译成与之**等价**的具体计算机上的低级程序设计语言。
-    > ![compile-2](https://source.acexy.cn/view/ZDU15u6)
+    > ![compile-2](../_images/compile-2.png)
   - 解释程序(interpreter)也是一种翻译程序，
     - 它将源语言书写的源程序作为输入，解释一句后就提交计算机执行一句，
     - 并不形成目标程序。
-    > ![compile-3](https://source.acexy.cn/view/ZDU15wo)
+    > ![compile-3](../_images/compile-3.png)
   - 区别
     - 前者有目标程序而后者无目标程序；
     - 前者运行效率高而后者便于人机对话。
 
 - 编译程序5个阶段
-  > ![compile-4](https://source.acexy.cn/view/ZDU15yl)
+  > ![compile-4](../_images/compile-4.png)
   - 编译前端
     - 词法分析：scanner。得到**token**
     - 语法分析：parser。得到**语法树**
@@ -131,7 +131,7 @@ tags:
     > 其中语法规则都是通过形式语言记录的。所以形式语言是所有的基础
     - 得到token序列。生成语法树
     - b = a + 2 * 5  的分析过程如下所示
-      > ![compile-5](https://source.acexy.cn/view/ZDU1509)
+      > ![compile-5](../_images/compile-5.png)
       - token1:发现b为标识符
       - token2:发现界符=
       - 判断为赋值语句，建立赋值操作节点
@@ -141,18 +141,18 @@ tags:
 
   - 语义分析
     - 构建标识符的语义辞典---符号表
-      > ![compile-6](https://source.acexy.cn/view/ZDU1526)
+      > ![compile-6](../_images/compile-6.png)
       - int a,b;  : 填写类型一列
     - 构造语句的语义树---中间语言；
-      > ![compile-7](https://source.acexy.cn/view/ZDU154t)
+      > ![compile-7](../_images/compile-7.png)
   - 代码优化：
     - 常数合并
-      > ![compile-8](https://source.acexy.cn/view/ZDU156f)
+      > ![compile-8](../_images/compile-8.png)
       - 将2*5 直接计算出来
       - 减少临时变量t1
     - 其他...
   - 代码生成
-    > ![compile-9](https://source.acexy.cn/view/ZDU158R)
+    > ![compile-9](../_images/compile-9.png)
     - R 为寄存器
     - 三条指令分别为：存、加 和 取 。
     - 过程
@@ -230,31 +230,31 @@ tags:
 
 - 形式语言:是字母表上的符号按一定的规则组成的所有符号串集合；其中的每个符号串称为一个句子。
 - 例
-  > ![compile-10](https://source.acexy.cn/view/ZDU1595) <br/>
-  > ![compile-11](https://source.acexy.cn/view/ZDU15-h) <br/>
-  > ![compile-13](https://source.acexy.cn/view/ZDU16A7) 指空字符串
-  > ![compile-12](https://source.acexy.cn/view/ZDU16Ch) <br/>
+  > ![compile-10](../_images/compile-10.png) <br/>
+  > ![compile-11](../_images/compile-11.png) <br/>
+  > ![compile-13](../_images/compile-13.png) 指空字符串
+  > ![compile-12](../_images/compile-12.png) <br/>
 
 **因为很多符号串集合是无限的，所以要通过一定的规则(文法)进行表示**
 
 ### 3.2.2. 符号串的计算
 
 - 规则
-  > ![compile-14](https://source.acexy.cn/view/ZDU16Ea)
+  > ![compile-14](../_images/compile-14.png)
 
 - 示例：
-  > ![compile-15](https://source.acexy.cn/view/ZDU16Gg)
+  > ![compile-15](../_images/compile-15.png)
 
 ### 3.2.3. 符号串集合运算
 
 - 规则
-  > ![compile-16](https://source.acexy.cn/view/ZDU16Iv)
+  > ![compile-16](../_images/compile-16.png)
   - 方幂：n个A的乘积
 
 - 示例：
-  > ![compile-17](https://source.acexy.cn/view/ZDU16K8) <br/>
-  > ![compile-18](https://source.acexy.cn/view/ZDU16NL) <br/>
-  > ![compile-19](https://source.acexy.cn/view/ZDU16PD)
+  > ![compile-17](../_images/compile-17.png) <br/>
+  > ![compile-18](../_images/compile-18.png) <br/>
+  > ![compile-19](../_images/compile-19.png)
 
 ## 3.3. 形式语言是由文法定义的(重)
 
@@ -288,7 +288,7 @@ tags:
 
 - 定义： 文法(grammar)是规则的有限集，通常可以表示为四元组
   - 说明：
-    > ![compile-20](https://source.acexy.cn/view/ZDU16QR)
+    > ![compile-20](../_images/compile-20.png)
     - Vn : 非终结符集 ( 定义的对象集，如：语法成分等 ) ；最后都会被替换。
       > 比如上面例子中的 1A,0A
     - Vt : 终结符集 ( 字母表 ) ；
@@ -296,7 +296,7 @@ tags:
       > 比如上面例子中的 A
     - P : 规则集 ( 又称产生式集 ) ；
     - 其中：
-      > ![compile-21](https://source.acexy.cn/view/ZDU16R7)
+      > ![compile-21](../_images/compile-21.png)
       - 大写英文字母表示非终结符号
       - αγ等表示字符串
       - 终结符号要看具体语言
@@ -304,8 +304,8 @@ tags:
     > **文法可能有多个，但最终产生的符号串集合相同。**<br />
     > 也就是两个文法**等价**，但不相等
     - 文法1
-      > ![compile-22](https://source.acexy.cn/view/ZDU16Ti) <br/>
-      > ![compile-23](https://source.acexy.cn/view/ZDU16VF)
+      > ![compile-22](../_images/compile-22.png) <br/>
+      > ![compile-23](../_images/compile-23.png)
       - S->aAc
         - a,c已经固定，先写出，但是中间有不确定个b，所以使用非终结符号A进行替换
       - A->bA|空字符串符号
@@ -315,60 +315,60 @@ tags:
       - A->bA|b
 
 - 文法定义的语言
-  > ![compile-25](https://source.acexy.cn/view/ZDU16Xd)
+  > ![compile-25](../_images/compile-25.png)
 
 - 利用文法表示语言的过程
   - 步骤：
     - 从开始符号出发，对符号串中的定义对象，采用推导的方法（用其规则右部替换左部）产生新的符号串
     - 如此进行，直到新符号串中全部为终结符号为止，最终的符号串就是一个句子。
   - 示例
-    > ![compile-26](https://source.acexy.cn/view/ZDU16Z9)
+    > ![compile-26](../_images/compile-26.png)
 
 - 利用文法表示标识符
   - 目标：以字母开头的数字字母序列
   - 文法定义：
-    > ![compile-27](https://source.acexy.cn/view/ZDU16cI)
+    > ![compile-27](../_images/compile-27.png)
   - 得到规则集P
-    > ![compile-28](https://source.acexy.cn/view/ZDU16dp)
+    > ![compile-28](../_images/compile-28.png)
 - 利用文法表示无符号整数
-  > ![compile-29](https://source.acexy.cn/view/ZDU16fT)
+  > ![compile-29](../_images/compile-29.png)
 - 利用文法表示简单算术表达式
-  > ![compile-30](https://source.acexy.cn/view/ZDU16hV)
+  > ![compile-30](../_images/compile-30.png)
   > 其中p为：<br />
-  > ![compile-31](https://source.acexy.cn/view/ZDU16jD)
+  > ![compile-31](../_images/compile-31.png)
   - 要考虑优先级，|分割的几项有顺序
-  > ![compile-32](https://source.acexy.cn/view/ZDU16k4)
+  > ![compile-32](../_images/compile-32.png)
 
 ## 3.4. 各种语法成分的定义
 
 ### 3.4.1. 文法的运算
 
 - 推导
-  > ![compile-33](https://source.acexy.cn/view/ZDU16or)
+  > ![compile-33](../_images/compile-33.png)
 - 规约
-  > ![compile-34](https://source.acexy.cn/view/ZDU16tE)
+  > ![compile-34](../_images/compile-34.png)
 
 - 最右与最左
   > 扫描源程序时，都是从左向右，所以最左推导用的比较多
   - 最左
-    > ![compile-35](https://source.acexy.cn/view/ZDU16vZ)
+    > ![compile-35](../_images/compile-35.png)
   - 最右
-    > ![compile-36](https://source.acexy.cn/view/ZDU16xR)
+    > ![compile-36](../_images/compile-36.png)
 
 ### 3.4.2. 句子，句型和语法树
 
 - 句型:由文法开始符号加推导出的任一符号串。（可以包含终结符号）
-  > ![compile-37](https://source.acexy.cn/view/ZDU16yo)
+  > ![compile-37](../_images/compile-37.png)
 - 句子:由开始符号加推导出的任一终结符号串。是一个句型的特殊情况。
-  > ![compile-38](https://source.acexy.cn/view/ZDU16z8)
+  > ![compile-38](../_images/compile-38.png)
 - 语法树： 句型(句子)产生过程的一种树结构表示(基于推导过程)。是无法看出来推导顺序(比如最左推导)的。
   - 树根—开始符号；
   - 树叶—给定的句型(句子)。
-  > ![compile-39](https://source.acexy.cn/view/ZDU162o)
+  > ![compile-39](../_images/compile-39.png)
 
 - 示例：
-  > ![compile-41](https://source.acexy.cn/view/ZDU164Q)
-  > ![compile-40](https://source.acexy.cn/view/ZDU167T)
+  > ![compile-41](../_images/compile-41.png)
+  > ![compile-40](../_images/compile-40.png)
 
 ### 3.4.3. 短语、简单短语和句柄
 
@@ -379,33 +379,33 @@ tags:
     - 也就是每次最左推导的第一个推导
     - 句柄实际上并不是语法树推导出来的。之后会讲
 - 例1：
-  > ![compile-42](https://source.acexy.cn/view/ZDU169C)
-  > ![compile-43](https://source.acexy.cn/view/ZDU16+e)
-  > ![compile-44](https://source.acexy.cn/view/ZDU16-0)
+  > ![compile-42](../_images/compile-42.png)
+  > ![compile-43](../_images/compile-43.png)
+  > ![compile-44](../_images/compile-44.png)
 - 中文语法例2：
-  > ![compile-45](https://source.acexy.cn/view/ZDU17DL)
+  > ![compile-45](../_images/compile-45.png)
 - 例3
-  > ![compile-46](https://source.acexy.cn/view/ZDU17G6)
+  > ![compile-46](../_images/compile-46.png)
 
 ## 3.5. 两类特性文法
 
 ### 3.5.1. 递归文法
 
-> ![compile-47](https://source.acexy.cn/view/ZDU17JT)
+> ![compile-47](../_images/compile-47.png)
 
 - 作用：递归文法是定义无限语言的工具,递归文法定义的语言有无限个句子
 
 ### 3.5.2. 二义性文法
 
 - 介绍：若文法中存在这样的句型，它具有两棵不同的语法树，则称该文法是二义性文法。
-  > ![compile-48](https://source.acexy.cn/view/ZDU17MC)
+  > ![compile-48](../_images/compile-48.png)
 
 - 文法二义性的消除
   - 【方法1】不改变文法的原有规则,加进一些非形式的规定。
     > 针对上面例子
     > 加进运算符的优先顺序和结合规则 对G(E)，规定*优于+，*和+服从左结合
   - 【方法2】构造一个**等价的无二义性文法**，将排除二义性的规则合并到文法中
-    > ![compile-49](https://source.acexy.cn/view/ZDU17Ns)
+    > ![compile-49](../_images/compile-49.png)
 
 - 注意区分：二义性的文法和二义性的语言
 
@@ -423,9 +423,9 @@ tags:
   1. 删除A->A 形式的产生式(自定己)；
   2. 删除不能从其推导出终结符号串的产生式(不终结)；
     - 算法
-      > ![compile-50](https://source.acexy.cn/view/ZDU17QH)
+      > ![compile-50](../_images/compile-50.png)
     - 示例：
-      > ![compile-51](https://source.acexy.cn/view/ZDU17R7)
+      > ![compile-51](../_images/compile-51.png)
       - 第一轮：
         - 第一步：ADG能产生终结符号，把ADG放入Vvt
         - 第二部，把B放入Vvt
@@ -436,20 +436,20 @@ tags:
         - 无
         - 无
       - 因此Vvt={ A,D,G,B,S }; 应删除C,E
-        > ![compile-52](https://source.acexy.cn/view/ZDU17TW)
+        > ![compile-52](../_images/compile-52.png)
   3. 删除在推导中永不可到达的产生式(不可达/不可用)。
     > 不可达：如何推导都无法到达的字符串<br />
     > 没有出现在产生式右侧的符号一定不可达<br />
     > 出现在产生式右侧的符号不一定可达
     - 算法：
-      > ![compile-53](https://source.acexy.cn/view/ZDU17Vg)
+      > ![compile-53](../_images/compile-53.png)
     - 示例：
       > 依旧是上面那个题
       - 接着上面的推导结果
       - 开始符号S一定可达，S可以产生B，B可以产生A
       - Vus = {S,B,A}，应删除 D,G(连同其产生式)
       - 结果：
-        > ![compile-54](https://source.acexy.cn/view/ZDU17XF)
+        > ![compile-54](../_images/compile-54.png)
 
 ### 3.6.2. 删除空字符串
 
@@ -457,7 +457,7 @@ tags:
   - 任何一个程序都不应该把空文件识别为正确程序
   - 语法分析时，有空字符串会使句柄的查找变得困难
 - 算法
-  > ![compile-55](https://source.acexy.cn/view/ZDU17aB)
+  > ![compile-55](../_images/compile-55.png)
 - 示例
   ```
   S->aAbc|bS
@@ -466,33 +466,33 @@ tags:
 
   能产生空字符串的有：A,B
   ```
-  > ![compile-56](https://source.acexy.cn/view/ZDU17dZ)
+  > ![compile-56](../_images/compile-56.png)
 
 ### 3.6.3. BNF（巴科斯范式）表示法
 
 - 基本思想：扩展文法，引进新的**文法符号**
   - 必选项：() 圆括号
-    > ![compile-57](https://source.acexy.cn/view/ZDU17gP)
+    > ![compile-57](../_images/compile-57.png)
   - 可选项：[] 方括号
-    > ![compile-58](https://source.acexy.cn/view/ZDU17jG)
+    > ![compile-58](../_images/compile-58.png)
   - 重复可选项：{} 花括号
     > 可以去掉左递归
-    > ![compile-59](https://source.acexy.cn/view/ZDU17l7)
+    > ![compile-59](../_images/compile-59.png)
 
 ## 3.7. 形式语言的分类
 
 - Chomsky 把形式语言分为四类，分别由四类文法定义；四类文法的区别在于产生式的形式不同：
-  > ![compile-64](https://source.acexy.cn/view/ZDU17n3)
+  > ![compile-64](../_images/compile-64.png)
   - 0 型语言 由 0型文法定义， 又称 无限制文法
-    > ![compile-60](https://source.acexy.cn/view/ZDU17pi) <br />
+    > ![compile-60](../_images/compile-60.png) <br />
     > 基本上没什么用
   - 1 型语言 由 1型文法定义， 又称 上下文有关文法
-    > ![compile-61](https://source.acexy.cn/view/ZDU17rd)
+    > ![compile-61](../_images/compile-61.png)
   - 2 型语言 由 2型文法定义， 又称 上下文无关文法
-    > ![compile-62](https://source.acexy.cn/view/ZDU17tT) <br />
+    > ![compile-62](../_images/compile-62.png) <br />
     > 也就是之前一直用的，**通常用来定义文法规则**
   - 3 型语言 由 3型文法定义， 又称 正规文法
-    > ![compile-63](https://source.acexy.cn/view/ZDU17vU) <br />
+    > ![compile-63](../_images/compile-63.png) <br />
     > 十分严格，**通常用来定义词法规则** <br />
     > 使用正规文法定义的语言称为正规语言
 
@@ -515,14 +515,14 @@ tags:
   - 正规语言是指由正规文法定义的语言；程序设计语言中的单词，大都属于此种语言。
 
 - 正规文法仅有三种形式的产生式
-  > ![compile-65](https://source.acexy.cn/view/ZDU17w5)
+  > ![compile-65](../_images/compile-65.png)
 - 正规语言有三种等价的表示方法：
   - (1) 正规文法
   - (2) 正规式(类似正则表达式)
   - (3) 有限自动机
 
 - 正规文法表示法
-  > ![compile-66](https://source.acexy.cn/view/ZDU17zo) <br />
+  > ![compile-66](../_images/compile-66.png) <br />
   > 写起来会比较费劲
 - 正规式表示法：
   - 正规式是指由字母表中的符号，通过以下三种运算(也可以使用圆括号)连接起来构成的表达式e
@@ -530,17 +530,17 @@ tags:
     - 闭包(* , +)
     - 连接 (.)
     - 或(|)
-  > ![compile-67](https://source.acexy.cn/view/ZDU171l) <br />
-  > ![compile-68](https://source.acexy.cn/view/ZDU173f)
+  > ![compile-67](../_images/compile-67.png) <br />
+  > ![compile-68](../_images/compile-68.png)
 
 - 有限自动机表示法
-  > ![compile-69](https://source.acexy.cn/view/ZDU1746) <br />
-  > ![compile-70](https://source.acexy.cn/view/ZDU176k) <br />
-  > ![compile-71](https://source.acexy.cn/view/ZDU178M) <br />
-  > ![compile-72](https://source.acexy.cn/view/ZDU18AI)
+  > ![compile-69](../_images/compile-69.png) <br />
+  > ![compile-70](../_images/compile-70.png) <br />
+  > ![compile-71](../_images/compile-71.png) <br />
+  > ![compile-72](../_images/compile-72.png)
 
 - 对比：
-  > ![compile-73](https://source.acexy.cn/view/ZDU18DI)
+  > ![compile-73](../_images/compile-73.png)
   ```
   凡是能由上述三种方法中的一种表示的语言，
   一定是正规语言；反之，凡是不能由上述三种方法表示
@@ -550,44 +550,44 @@ tags:
 ## 4.2. 有限自动机的定义与分类
 
 - 定义：有限自动机是一种数学模型，用于描述正规语言,可定义为五元组：
-  > ![compile-74](https://source.acexy.cn/view/ZDU18GR) <br />
-  > ![compile-75](https://source.acexy.cn/view/ZDU18Jq)
+  > ![compile-74](../_images/compile-74.png) <br />
+  > ![compile-75](../_images/compile-75.png)
 
 - L(FA)生成示例
-  > ![compile-76](https://source.acexy.cn/view/ZDU18NW) <br />
+  > ![compile-76](../_images/compile-76.png) <br />
   > 最好不要有空字符串的边，任何一个状态向自己转变都可以认为有一条空字符串变。所以这里把开始状态也设置成了结束状态
 
 - 有限自动机的两种表现形式
-  > ![compile-77](https://source.acexy.cn/view/ZDU18RR)
+  > ![compile-77](../_images/compile-77.png)
   - 存储时，都是以变换表的形式存储。
     > 稀疏矩阵压缩
 
 - 有限自动机分类：
-  > 题目：![compile-78](https://source.acexy.cn/view/ZDU18TD)
+  > 题目：![compile-78](../_images/compile-78.png)
   - **确定有限自动机(DFA)**
     - 特点：
       - 开始状态唯一
       - 变换函数单值
       - 不带空字符串边。
     - 示例
-      > ![compile-82](https://source.acexy.cn/view/ZDU18Uu)
+      > ![compile-82](../_images/compile-82.png)
   - **不确定有限自动机(NFA)**
     - 特点：
       - 不满足确定有限自动机的任意一条特点
     - 细分：
-      > ![compile-83](https://source.acexy.cn/view/ZDU18Wp)
+      > ![compile-83](../_images/compile-83.png)
     - 示例
       - 联合式
         - 先匹配一个，再匹配另一个
-        > ![compile-79](https://source.acexy.cn/view/ZDU18YT)
+        > ![compile-79](../_images/compile-79.png)
       - 组合式
         > 都是正确的，但是不好用
         - 模式1:
-          > ![compile-81](https://source.acexy.cn/view/ZDU18Zy)
+          > ![compile-81](../_images/compile-81.png)
           - 开始状态不唯一
           - 变换函数不单值(1,a)=(2|4))
         - 模式2：
-          > ![compile-80](https://source.acexy.cn/view/ZDU18bU)
+          > ![compile-80](../_images/compile-80.png)
           - 带有空字符串边
 
 ## 4.3. 有限自动机的等价转换
@@ -610,7 +610,7 @@ tags:
 
 - 定义：设有两个有限自动机FA1和FA2，若L(FA1)= L(FA2)则称FA1与FA2等价，记作FA1等价于FA2。
   - 例：
-    > ![compile-84](https://source.acexy.cn/view/ZDU18eE)
+    > ![compile-84](../_images/compile-84.png)
 
 #### 4.3.2.2. 状态等价
 
@@ -620,9 +620,9 @@ tags:
   - **同一个状态是等价状态的特殊情况**
   - 例：
     - 例1
-      > ![compile-85](https://source.acexy.cn/view/ZDU18gU)
+      > ![compile-85](../_images/compile-85.png)
     - 例2
-      > ![compile-86](https://source.acexy.cn/view/ZDU18iZ)
+      > ![compile-86](../_images/compile-86.png)
 
 ### 4.3.3. 有限自动机的确定化
 
@@ -630,18 +630,18 @@ tags:
 
 - 若存在空字符串闭路
   - 步骤1：
-    > ![compile-87](https://source.acexy.cn/view/ZDU18kH)
+    > ![compile-87](../_images/compile-87.png)
     - 把空字符串闭路上各节点合而为一
     - 结束
 - 若不存在空字符串闭路
   - 步骤1：因为空字符串边，导致出现有隐含的开始态和结束态。要标记出来
-    > 例：![compile-88](https://source.acexy.cn/view/ZDU18ln)
+    > 例：![compile-88](../_images/compile-88.png)
     - 若开始状态或隐藏开始状态发出的空字符串边到达一个状态，那么到达的状态是隐含开始状态
       > 开始状态是空字符串，加一个空字符串（也就是什么都不做），到达另一个状态，所以那个状态应该也是开始状态
     - 若有个状态通过空字符串边指向结束状态，那么该状态是隐含结束状态
 
   - 步骤2
-    > 例：![compile-89](https://source.acexy.cn/view/ZDU18nP)
+    > 例：![compile-89](../_images/compile-89.png)
     - 对空字符串边，按空字符串通路逆向逐一进行
       - 删除一个空字符串边；同时引进新边
       - 凡由原空字符串边终点发出的边，也要由其始点发出。
@@ -652,15 +652,15 @@ tags:
   - 步骤3：重复步骤(3)，直到再无空字符串边为止。
 
 - 整体示例：
-  > ![compile-90](https://source.acexy.cn/view/ZDU18re)
+  > ![compile-90](../_images/compile-90.png)
 
 #### 4.3.3.2. 有限自动机的确定化2--转化为DFA
 
 - 算法
-  > ![compile-91](https://source.acexy.cn/view/ZDU18wZ)
+  > ![compile-91](../_images/compile-91.png)
 
 - 示例
-  > ![compile-92](https://source.acexy.cn/view/ZDU180k)
+  > ![compile-92](../_images/compile-92.png)
 
 ### 4.3.4. 有限自动机的最小化算法
 
@@ -673,9 +673,9 @@ tags:
 > 两个算法，第二个较简单
 
 - 构造有用状态集算法1：
-  > ![compile-93](https://source.acexy.cn/view/ZDU183B)
+  > ![compile-93](../_images/compile-93.png)
 - 构造有用状态集算法2：
-  > ![compile-94](https://source.acexy.cn/view/ZDU1861)
+  > ![compile-94](../_images/compile-94.png)
 
 #### 4.3.4.2. 合并等价状态
 
@@ -690,25 +690,25 @@ tags:
     # 好家伙就是一个递归
     ```
   - 示例：
-    > ![compile-95](https://source.acexy.cn/view/ZDU188u)
+    > ![compile-95](../_images/compile-95.png)
     - 根据是否为结束状态，划分为两个子集
-      > ![compile-96](https://source.acexy.cn/view/ZDU18+M)
+      > ![compile-96](../_images/compile-96.png)
     - 判断等价：
-      > ![compile-97](https://source.acexy.cn/view/ZDU18-x)
+      > ![compile-97](../_images/compile-97.png)
     - 结果
-      > ![compile-98](https://source.acexy.cn/view/ZDU19BZ)
+      > ![compile-98](../_images/compile-98.png)
 
 - 具体算法(划分不等价状态集)
-  > ![compile-99](https://source.acexy.cn/view/ZDU19El)
+  > ![compile-99](../_images/compile-99.png)
 
 #### 4.3.4.3. 示例
 
 - 删除无用状态：(上面也有)
-  > ![compile-100](https://source.acexy.cn/view/ZDU19Ib)
+  > ![compile-100](../_images/compile-100.png)
 - 合并等价状态
-  > ![compile-101](https://source.acexy.cn/view/ZDU19Oz)
+  > ![compile-101](../_images/compile-101.png)
 - 得到结果
-  > ![compile-102](https://source.acexy.cn/view/ZDU19Rc)
+  > ![compile-102](../_images/compile-102.png)
 
 ## 4.4. 有限自动机的实现
 
@@ -719,43 +719,43 @@ tags:
 - 说明：
   - (1) 假定自动机只作为**识别器**，即对**待识别**的符号串： 仅回答 是(接受) 或 否(拒绝)。
   - (2) 为便于处理，可令 # 作为**待识别的符号串的后继符**。为此，扩展自动机如下：
-    > ![compile-103](https://source.acexy.cn/view/ZDU19Th)
+    > ![compile-103](../_images/compile-103.png)
   - (3) 令 getchar(ch) 为读符号函数。
 - 实验流程图：
-  > ![compile-104](https://source.acexy.cn/view/ZDU19WE)
+  > ![compile-104](../_images/compile-104.png)
 
 ### 4.4.2. 变换表存储结构设计
 
 - 二维数组
-  > ![compile-105](https://source.acexy.cn/view/ZDU19X8)
+  > ![compile-105](../_images/compile-105.png)
 - 压缩变化表
-  > ![compile-106](https://source.acexy.cn/view/ZDU19Z8)
+  > ![compile-106](../_images/compile-106.png)
 
 ### 4.4.3. 示例
 
-![compile-107](https://source.acexy.cn/view/ZDU19cc)
+![compile-107](../_images/compile-107.png)
 
 ## 4.5. 正规语言描述方法间的相互转换
 
 ### 4.5.1. 正规文法<=>DFA
 
 - 对应关系
-  > ![compile-108](https://source.acexy.cn/view/ZDU19ej)
+  > ![compile-108](../_images/compile-108.png)
 - 自动机=>正规文法 示例
-  > ![compile-109](https://source.acexy.cn/view/ZDU19gR)
+  > ![compile-109](../_images/compile-109.png)
 - 正规文法 => 自动机, 并求 L(G) 示例
-  > ![compile-110](https://source.acexy.cn/view/ZDU19iG)
+  > ![compile-110](../_images/compile-110.png)
 
 ### 4.5.2. 正规式 <=> DFA
 
 - 转换机制
-  > ![compile-111](https://source.acexy.cn/view/ZDU19lF)<br />
+  > ![compile-111](../_images/compile-111.png)<br />
   >  先拆 乘，变成一条路。再继续分解
 - 正规式 => 自动机 示例
-  > ![compile-112](https://source.acexy.cn/view/ZDU19od)
+  > ![compile-112](../_images/compile-112.png)
 
 - 习题
-  > ![compile-113](https://source.acexy.cn/view/ZDU19q4) <br />
+  > ![compile-113](../_images/compile-113.png) <br />
   > 不止一种答案
 
 # 5. 词法分析
@@ -801,15 +801,15 @@ tags:
     - 长短统一；
     - 语法、语义信息分开。
 - 表示
-  > ![compile-114](https://source.acexy.cn/view/ZDU19su)
+  > ![compile-114](../_images/compile-114.png)
 - 设计方案
-  > ![compile-115](https://source.acexy.cn/view/ZDU19uX)
+  > ![compile-115](../_images/compile-115.png)
 
 ## 5.3. 词法分析程序的设计
 
 ### 5.3.1. 内部组成：
 
-![compile-118](https://source.acexy.cn/view/ZDU19v9)
+![compile-118](../_images/compile-118.png)
 
 - 识别器 --- 识别单词的有限自动机
 - 翻译器 --- 根据有限自动机所识别出的对象，完成从单词串到单词的TOKEN串的翻译。
@@ -818,18 +818,18 @@ tags:
 
 - 单独的扫描器：
   - 扫描所有源程序，生成所有token
-  > ![compile-116](https://source.acexy.cn/view/ZDU19xa)
+  > ![compile-116](../_images/compile-116.png)
 - 作为语法分析器的子程序
   - 语法分析器会向扫描器传递getward命令
   - 扫描器扫描一个单词，生成一个token
   - 返回给语法分析起
-  > ![compile-117](https://source.acexy.cn/view/ZDU19zB)
+  > ![compile-117](../_images/compile-117.png)
 
 ### 5.3.3. 简单词法分析器示例
 
 #### 5.3.3.1. 有限自动机的设计
 
-![compile-119](https://source.acexy.cn/view/ZDU192F)
+![compile-119](../_images/compile-119.png)
 
 - 泛指单词后继符：**除了字母和数字以外其他的任意符号**
 - 每一个单词都要从开始状态到结束状态走一遍
@@ -853,14 +853,14 @@ a1 识别：
 
 #### 5.3.3.2. 流程图
 
-![compile-120](https://source.acexy.cn/view/ZDU195b)
+![compile-120](../_images/compile-120.png)
 
 - 示例：
-  > ![compile-121](https://source.acexy.cn/view/ZDU197J)
+  > ![compile-121](../_images/compile-121.png)
   - 各个表：
-    > ![compile-122](https://source.acexy.cn/view/ZDU1985)
+    > ![compile-122](../_images/compile-122.png)
   - token生成
-    > ![compile-123](https://source.acexy.cn/view/ZDU19-a)
+    > ![compile-123](../_images/compile-123.png)
 
 ## 5.4. 算术常数处理机的设计
 
@@ -877,14 +877,14 @@ a1 识别：
 ### 5.4.2. 识别器设计
 
 - 算数常数基本形式
-  > ![compile-125](https://source.acexy.cn/view/ZDU1+BW)
+  > ![compile-125](../_images/compile-125.png)
 - 识别器的设计
-  > ![compile-124](https://source.acexy.cn/view/ZDU1+FA)
+  > ![compile-124](../_images/compile-124.png)
 
 ### 5.4.3. 翻译器设计
 
 - 参数设置(val(d)字符转数值函数)
-  > ![compile-126](https://source.acexy.cn/view/ZDU1+IV)
+  > ![compile-126](../_images/compile-126.png)
   ```
   拼 尾数值 变量
   比如12：
@@ -898,19 +898,19 @@ a1 识别：
   具体可以看看示例
   ```
 - 结果变量：
-  > ![compile-127](https://source.acexy.cn/view/ZDU1+J3)
+  > ![compile-127](../_images/compile-127.png)
 
 - 函数设计
-  > ![compile-124](https://source.acexy.cn/view/ZDU1+FA)<br><br>
-  > ![compile-128](https://source.acexy.cn/view/ZDU1+MK)
+  > ![compile-124](../_images/compile-124.png)<br><br>
+  > ![compile-128](../_images/compile-128.png)
 
 ### 5.4.4. 常熟处理机程序框图
 
-![compile-129](https://source.acexy.cn/view/ZDU1+Ph)
+![compile-129](../_images/compile-129.png)
 
 ### 5.4.5. 示例
 
-![compile-130](https://source.acexy.cn/view/ZDU1+Tk)
+![compile-130](../_images/compile-130.png)
 
 # 6. 语法分析
 
@@ -921,15 +921,15 @@ a1 识别：
 ### 6.1.1. 定义与分类
 
 - 定义：形式上说，语法分析是指对给定的符号串（），判定其是否是某文法G(Z)的句子。即
-  > ![compile-131](https://source.acexy.cn/view/ZDU1+VM)
+  > ![compile-131](../_images/compile-131.png)
 
 - 分类：
   - 自顶向下法
-    > ![compile-132](https://source.acexy.cn/view/ZDU1+Wu)
+    > ![compile-132](../_images/compile-132.png)
     - 递归子程序法
     - LL(1)分析法
   - 自定向上法
-    > ![compile-133](https://source.acexy.cn/view/ZDU1+YZ)
+    > ![compile-133](../_images/compile-133.png)
     - LR()分析方法
     - 算符优先分析方法(有些过时)
 
@@ -938,14 +938,14 @@ a1 识别：
 #### 6.1.2.1. 两大类
 
 - 自顶向下分析的关键技术是如何确定具有相同左部的产生式之侯选者！
-  > ![compile-134](https://source.acexy.cn/view/ZDU1+ad)
+  > ![compile-134](../_images/compile-134.png)
 
 - 自底向上分析的关键技术是如何确定当前句型的句柄(找简单子树)！
-  > ![compile-135](https://source.acexy.cn/view/ZDU1+cu)
+  > ![compile-135](../_images/compile-135.png)
   - 观察语法树构造过程：
-    > ![compile-136](https://source.acexy.cn/view/ZDU1+e8)
+    > ![compile-136](../_images/compile-136.png)
   - 其中每次的句柄为：
-    > ![compile-137](https://source.acexy.cn/view/ZDU1+g+)
+    > ![compile-137](../_images/compile-137.png)
 
 #### 6.1.2.2. 三个算法
 
@@ -961,12 +961,12 @@ a1 识别：
     - 对每一个非终结符，构造一个子程序，用以识别该非终结符所定义的符号串。
     - 每个子程序以产生式左部非终结符命名，以产生式右部构造子程序内容。
   - 递归子程序构造示例1：
-    > ![compile-138](https://source.acexy.cn/view/ZDU1+ip) <br />
-    > ![compile-139](https://source.acexy.cn/view/ZDU1+l4)
+    > ![compile-138](../_images/compile-138.png) <br />
+    > ![compile-139](../_images/compile-139.png)
   - 算法总结
-    > ![compile-140](https://source.acexy.cn/view/ZDU1+ox)
+    > ![compile-140](../_images/compile-140.png)
   - 递归子程序构造示例2：
-    > ![compile-141](https://source.acexy.cn/view/ZDU1+sI)
+    > ![compile-141](../_images/compile-141.png)
     ```
     abc#：
 
@@ -992,17 +992,17 @@ a1 识别：
     - 具有相同左部的各产生式，首符号不同；
     - 文法不能有左递归！
   - 如：
-    > ![compile-142](https://source.acexy.cn/view/ZDU1+t8)
+    > ![compile-142](../_images/compile-142.png)
   - 归纳：**递归子程序要求文法应是LL(1)文法!**
 
 - 算术表达式构造示例3
-  > ![compile-143](https://source.acexy.cn/view/ZDU1+vk)
+  > ![compile-143](../_images/compile-143.png)
   - 消除左递归
-    > ![compile-144](https://source.acexy.cn/view/ZDU1+xP)
+    > ![compile-144](../_images/compile-144.png)
   - `{}`根据含义，在流程图中应该代表循环
   - 画出程序流程图
-    > ![compile-145](https://source.acexy.cn/view/ZDU1+z8)
-    > ![compile-146](https://source.acexy.cn/view/ZDU1+2i)
+    > ![compile-145](../_images/compile-145.png)
+    > ![compile-146](../_images/compile-146.png)
   - 判断示例
     ```
     a+b*c#
@@ -1023,21 +1023,21 @@ a1 识别：
   - (2)  利用一个分析表，登记如何选择产生式的知识；
   - (3)  此分析法要求文法必须是 LL(1)文法。
 - 示例：
-  > ![compile-147](https://source.acexy.cn/view/ZDU1+59)
+  > ![compile-147](../_images/compile-147.png)
   - 思考：
     - (1) 选择推导产生式后，为什么要逆序压栈?
     - (2) 当栈顶为A,当前单词为c时，为什么选择 A ->空字符串?
 
 - 算法总结：
-  > ![compile-148](https://source.acexy.cn/view/ZDU1+9Z)
+  > ![compile-148](../_images/compile-148.png)
 
 ### 6.3.2. LL(1)文法
 
 #### 6.3.2.1. 首符号集合,后继符集合，选择符集合
 
-> ![compile-149](https://source.acexy.cn/view/ZDU1-AK)
+> ![compile-149](../_images/compile-149.png)
 - 注意：
-  > ![compile-150](https://source.acexy.cn/view/ZDU1-CB)
+  > ![compile-150](../_images/compile-150.png)
 - 其他注意点：
   ```
   后继符号集合：
@@ -1052,7 +1052,7 @@ a1 识别：
   能不能推导出　空字符串，是两种情况
   ```
 - 示例：
-> ![compile-151](https://source.acexy.cn/view/ZDU1-Fr)
+> ![compile-151](../_images/compile-151.png)
 - β 不为空是指β推导不出空字符串
   ```
   S->aBb
@@ -1070,12 +1070,12 @@ a1 识别：
 #### 6.3.2.2. 定义
 
 - 文法定义：
-  > ![spark-39](https://source.acexy.cn/view/ZDU1-Ir)
+  > ![spark-39](../_images/spark-39.png)
 
 > 有左递归肯定不是LL1文法
 
 - 示例：
-  > ![compile-153](https://source.acexy.cn/view/ZDU1-Ml)
+  > ![compile-153](../_images/compile-153.png)
 
 ### 6.3.3. LL1分析器设计
 
@@ -1083,15 +1083,15 @@ a1 识别：
 
 #### 6.3.3.1. 分析表
 
-![compile-154](https://source.acexy.cn/view/ZDU1-QK)
+![compile-154](../_images/compile-154.png)
 
 > 当用非终结符A向下推导时，面临输入符号a时，所应采取的候选产生式
 
-![compile-156](https://source.acexy.cn/view/ZDU1-UI)
+![compile-156](../_images/compile-156.png)
 
 #### 6.3.3.2. 控制程序
 
-![compile-155](https://source.acexy.cn/view/ZDU1-XR)
+![compile-155](../_images/compile-155.png)
 
 > 这个控制程序实现了之前描述的算法
 >
@@ -1107,21 +1107,21 @@ a1 识别：
 
 ### 6.3.4. 练习
 
-![compile-157](https://source.acexy.cn/view/ZDU1-bQ)
+![compile-157](../_images/compile-157.png)
 
 ---
 
-![compile-158](https://source.acexy.cn/view/ZDU1-fq)
+![compile-158](../_images/compile-158.png)
 
 ---
-![compile-159](https://source.acexy.cn/view/ZDU1-hk)
+![compile-159](../_images/compile-159.png)
 
 ---
-![compile-160](https://source.acexy.cn/view/ZDU1-lA)
+![compile-160](../_images/compile-160.png)
 
 ---
 
-![compile-161](https://source.acexy.cn/view/ZDU1-pT)
+![compile-161](../_images/compile-161.png)
 
 ## 6.4. LR()分析法
 
@@ -1129,49 +1129,49 @@ a1 识别：
 
 #### 6.4.1.1. 说明
 
-![compile-162](https://source.acexy.cn/view/ZDU1-rx)
+![compile-162](../_images/compile-162.png)
 
 ---
 
-![compile-163](https://source.acexy.cn/view/ZDU1-vX)
+![compile-163](../_images/compile-163.png)
 
 #### 6.4.1.2. 算法示例
 
-![compile-164](https://source.acexy.cn/view/ZDU1-0q)
+![compile-164](../_images/compile-164.png)
 
 #### 6.4.1.3. 句柄识别
 
-![compile-165](https://source.acexy.cn/view/ZDU1-4y)
+![compile-165](../_images/compile-165.png)
 
 ### 6.4.2. 句柄识别器
 
 #### 6.4.2.1. 说明
 
-![compile-166](https://source.acexy.cn/view/ZDU1-8m)
+![compile-166](../_images/compile-166.png)
 
 ---
 
-![compile-167](https://source.acexy.cn/view/ZDU2AAC)
+![compile-167](../_images/compile-167.png)
 
 - 5-2：A->  XX.非终结符
 
 ---
 
-![compile-168](https://source.acexy.cn/view/ZDU2ADw)
+![compile-168](../_images/compile-168.png)
 
 #### 6.4.2.2. 例
 
-![compile-169](https://source.acexy.cn/view/ZDU2AHW)
+![compile-169](../_images/compile-169.png)
 
 ### 6.4.3. LR()分析器
 
 #### 6.4.3.1. 基本组成与设计
 
-![compile-170](https://source.acexy.cn/view/ZDU2ALm)
+![compile-170](../_images/compile-170.png)
 
 ---
 
-![compile-175](https://source.acexy.cn/view/ZDU2AOm)
+![compile-175](../_images/compile-175.png)
 
 - 一个分析表
 - 产生式存储map
@@ -1179,78 +1179,78 @@ a1 识别：
 
 #### 6.4.3.2. LR(0)分析器设计
 
-![compile-171](https://source.acexy.cn/view/ZDU2ASS)
+![compile-171](../_images/compile-171.png)
 
 ---
 
-![compile-172](https://source.acexy.cn/view/ZDU2AW5)
+![compile-172](../_images/compile-172.png)
 
 ---
 
-![compile-173](https://source.acexy.cn/view/ZDU2AZ-)
+![compile-173](../_images/compile-173.png)
 
 ---
 
-![compile-174](https://source.acexy.cn/view/ZDU2Acs)
+![compile-174](../_images/compile-174.png)
 
 ---
 
-![compile-176](https://source.acexy.cn/view/ZDU2Aga)
+![compile-176](../_images/compile-176.png)
 
 #### 6.4.3.3. SLR(1)分析器设计
 
-![compile-177](https://source.acexy.cn/view/ZDU2Ako)
+![compile-177](../_images/compile-177.png)
 
 ---
 
-![compile-178](https://source.acexy.cn/view/ZDU2Apc)
+![compile-178](../_images/compile-178.png)
 
 #### 6.4.3.4. 示例1
 
-![compile-179](https://source.acexy.cn/view/ZDU2AtY)
+![compile-179](../_images/compile-179.png)
 
 ---
 
-![compile-180](https://source.acexy.cn/view/ZDU2Aws)
+![compile-180](../_images/compile-180.png)
 
 ---
 
-![compile-181](https://source.acexy.cn/view/ZDU2Azq)
+![compile-181](../_images/compile-181.png)
 
 ---
 
-![compile-182](https://source.acexy.cn/view/ZDU2A3f)
+![compile-182](../_images/compile-182.png)
 
 #### 6.4.3.5. 示例2
 
-![compile-183](https://source.acexy.cn/view/ZDU2A61)
+![compile-183](../_images/compile-183.png)
 
 ---
 
-![compile-184](https://source.acexy.cn/view/ZDU2A9U)
+![compile-184](../_images/compile-184.png)
 
-![compile-185](https://source.acexy.cn/view/ZDU2A-+)
+![compile-185](../_images/compile-185.png)
 
 # 7. 中间代码及其翻译
 
 ## 7.1. 说明
 
 - 中间代码
-  > ![compile-186](https://source.acexy.cn/view/ZDU2BDf)
+  > ![compile-186](../_images/compile-186.png)
 - 作用
-  > ![compile-187](https://source.acexy.cn/view/ZDU2BGf)
+  > ![compile-187](../_images/compile-187.png)
 
 ## 7.2. 示例
 
-![compile-188](https://source.acexy.cn/view/ZDU2BJs)
+![compile-188](../_images/compile-188.png)
 
 ---
 
-![compile-189](https://source.acexy.cn/view/ZDU2BM2)
+![compile-189](../_images/compile-189.png)
 
 ---
 
-![compile-190](https://source.acexy.cn/view/ZDU2BQu)
+![compile-190](../_images/compile-190.png)
 
 ## 7.3. 设计
 

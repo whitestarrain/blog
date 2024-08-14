@@ -33,10 +33,10 @@ app.listen(3000)
 
 > dfasdf
 
-![](https://source.acexy.cn/view/XSuPBGR)
+![](../_images/2020-08-06-blog-init-01.jpg)
 
 
-![](https://source.acexy.cn/view/XSvPiyc)
+![](../_images/test-img.jpg)
 
 Lorem `data.save` ipsum dolor sit amet, consectetur adipisicing elit. Aliquam qui voluptatem excepturi nemo similique atque sapiente aperiam, dolorum deleniti! Esse quam perferendis temporibus nemo at molestias necessitatibus tenetur cupiditate sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil et voluptatibus non labore officiis assumenda, distinctio perspiciatis blanditiis nesciunt rerum molestias impedit fugiat nulla qui libero minima quasi! Libero, iure.
 
@@ -78,9 +78,9 @@ app.listen(3000)
 > dfasdf
 
 
-![](https://source.acexy.cn/view/XV0I0El)
+![](../_images/2020-10-22-10-38-03.png)
 
-![](https://source.acexy.cn/view/XSuPBGR)
+![](../_images/2020-08-06-blog-init-01.jpg)
 
 Lorem `data.save` ipsum dolor sit amet, consectetur adipisicing elit. Aliquam qui voluptatem excepturi nemo similique atque sapiente aperiam, dolorum deleniti! Esse quam perferendis temporibus nemo at molestias necessitatibus tenetur cupiditate sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil et voluptatibus non labore officiis assumenda, distinctio perspiciatis blanditiis nesciunt rerum molestias impedit fugiat nulla qui libero minima quasi! Libero, iure.
 
@@ -95,4 +95,4 @@ body {
 
 
 
-<img src="https://source.acexy.cn/view/XSuPBGR" alt="2020-08-06-blog-init-01-jpg" border="0">
+<img src="../_images/2020-08-06-blog-init-01.jpg" alt="2020-08-06-blog-init-01-jpg" border="0">

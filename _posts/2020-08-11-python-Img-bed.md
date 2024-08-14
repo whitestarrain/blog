@@ -20,7 +20,7 @@ description: 博客图片自动上传图床并替换链接,自动完成第三方
 
 ### 1.1.1. 上传图片请求分析
 
-![](https://source.acexy.cn/view/XSuPBUv)
+![](../_images/imgbb1.jpg)
 
 - 请求体中一共有五个参数，多次上传图片后分析可得
     - source:二进制文件，就是图片数据
@@ -38,13 +38,13 @@ description: 博客图片自动上传图床并替换链接,自动完成第三方
 ```python
 token = re.findall(r"PF.obj.config.auth_token=\"(\w*)\"", html_str)[0]
 ```
-![](https://source.acexy.cn/view/XSuPBrR)
+![](../_images/imgbb2.jpg)
 
 
 ### 1.1.3. 响应分析
 
 搜索上传图片后跳转页面显示的连接，可以发现与响应的json数据中的该条相同
-![](https://source.acexy.cn/view/XSuPEFG)
+![](../_images/imgbb3.jpg)
 通过解析json字符串即可获得
 
 ### 1.1.4. 代码
@@ -97,7 +97,7 @@ def img_to_url(self, path=""):
 ### 1.2.1. 分析
 
 在imgbb进行注册后，点击左上角关于，进入官方api文档
-![](https://source.acexy.cn/view/XSuPE2J)
+![](../_images/imgbb4-api.jpg)
 
 - 参数：
     - key:注册后可以在上方生成。必选

@@ -16,7 +16,6 @@ sass:
 paginate: 5
 paginate_path: "/page:num"
 
-permalink: /posts/:title/
 texture:
   title: whitestarrain's blog
   tagline: Relaxation is the source of strength for effort
@@ -55,7 +54,7 @@ excerpt_separator: <!-- more -->
 # - about.md
 
 # Build settings
-# theme: texture
+theme:
 
 highlighter: rouge
 markdown: kramdown
@@ -73,5 +72,15 @@ plugins:
 
 exclude:
     - imageMapping
-    - images
     - src
+
+collections:
+  images:
+    output: true
+    # May be github page bug,
+    # unlike local compilation, only this permalink can make image output to posts/_images/
+    permalink: /posts/_images/:collection/:name:output_ext
+  posts:
+    output: true
+    permalink: /posts/:title/
+

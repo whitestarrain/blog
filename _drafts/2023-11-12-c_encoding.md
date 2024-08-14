@@ -59,7 +59,7 @@ hexdump
 
 e4 bd a0 e5  a5 bd
 
-![c_encoding_1](../images/c_encoding_1.png)
+![c_encoding_1](../_images/c_encoding_1.png)
 
 # gdb查看进程内中文的编码
 

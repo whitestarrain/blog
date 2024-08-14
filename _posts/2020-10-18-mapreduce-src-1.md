@@ -58,13 +58,13 @@ public class MyWordCount {
 
 ## 2.2. job 设置
 
-![](https://source.acexy.cn/view/XV0I0Km)
+![](../_images/2020-10-22-16-23-37.png)
 
 Job 类相关的类的继承关系见上图
 
 ---
 
-![](https://source.acexy.cn/view/XV0I0T5)
+![](../_images/2020-10-21-22-06-19.png)
 
 其中 job 实现 MRJobConfig 接口，而该接口定义了默认的 job 配置，比如 mapper 类的设置等等，可以通过 job.setXXX()修改默认配置。
 
@@ -72,13 +72,13 @@ Job 类相关的类的继承关系见上图
 
 ## 2.3. 提交+分片
 
-![](https://source.acexy.cn/view/XV0I0ky)
+![](../_images/2020-10-21-22-21-16.png)
 
 waitForCompletion()方法会等待提交 job 完成，其中会调用 submit()方法进行提交。
 
 ---
 
-![](https://source.acexy.cn/view/XV0I01r)
+![](../_images/2020-10-22-10-09-43.png)
 
 通过提交器的 submitJobInternal 方法实现 job 的提交，并返回作业状态
 
@@ -93,19 +93,19 @@ waitForCompletion()方法会等待提交 job 完成，其中会调用 submit()�
 
 ---
 
-![](https://source.acexy.cn/view/XV0I1M5)
+![](../_images/2020-10-22-09-49-56.png)
 
 writeSplits 会做好分片，然后返回分片数量
 
 ---
 
-![](https://source.acexy.cn/view/XV0I1dB)
+![](../_images/2020-10-22-09-53-59.png)
 
 使用新的 Mapper 接口，查看分片方法 writeNewSplits
 
 ---
 
-![](https://source.acexy.cn/view/XV0I2MU)
+![](../_images/2020-10-22-10-42-32.png)
 
 首先获取 InputFormat 接口的实现类。其中 InputFormat 会读取 conf 对象中设置的类，通过反射方式获得对象。
 
@@ -119,9 +119,9 @@ InputFormat 类主要由两个功能：
 
 ---
 
-![](https://source.acexy.cn/view/XV0I3On)
+![](../_images/2020-10-22-15-23-15.png)
 
-![](https://source.acexy.cn/view/XV0I3Tt)
+![](../_images/2020-10-22-14-52-54.png)
 
 
 TextInputFormat 继承了 FileInputFormat，而 getSplits()在 TextInputFormat 中并没有重新实现。所以要去 FileInputFormat 查看该方法。
@@ -149,7 +149,7 @@ bytesRemaining 用来存储还剩下多少字节用来分片，每分片一次�
 - 而偏移量(对于整个文件)就是 length-bytesRemaining
 
 然后获取 FileSplit 对象，存储分片的信息：
-![](https://source.acexy.cn/view/XV0I3Yo)
+![](../_images/2020-10-22-17-19-22.png)
 
 - file-文件名
 - start-要处理的文件中第一个字节的位置

@@ -185,7 +185,7 @@ windows 上终端开发环境的配置其实以前就开始写了，写了 1/4 �
 
 这里只对 lua 开发环境搭建进行一下简单说明。
 
-![2022-06-24-nvim-lua-plugin-md_section_number](https://source.acexy.cn/view/YJTNnqQ)
+![2022-06-24-nvim-lua-plugin-md_section_number](../_images/2022-06-24-nvim-lua-plugin-md_section_number.png)
 
 - 导航栏：tagbar
 - 文件浏览：nvim-tree
@@ -201,7 +201,7 @@ windows 上终端开发环境的配置其实以前就开始写了，写了 1/4 �
   - 提供新开`luapad`，以及 toggle luapad 等 api 进行使用。
   - 测试一些语法或 api，以及调试一些方法的时候特别好用。
 
-  ![](https://source.acexy.cn/view/YJTNoSS)
+  ![](../_images/luapad_new.gif)
 
   ```lua
   -- lua脚本中添加改句，确保luapad可以查找到当前文件夹下的模块。

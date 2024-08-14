@@ -44,7 +44,7 @@ Jupyter Notebook 的本质是一个 Web 应用程序，便于创建和共享文�
 
 - 架构图：
 
-  > ![](https://source.acexy.cn/view/XTPWnml)
+  > ![](../_images/jupyter-ns-3.png)
 
   - 服务器读取文件，并藉此生成 html 页面
   - 用户使用浏览器访问页面，进行交互操作
@@ -68,7 +68,7 @@ Jupyter Notebook 的本质是一个 Web 应用程序，便于创建和共享文�
 
 通过`jupyter -h`可以查看所有命令参数以及子命令。比如通过`jupyter --paths`可以查看 jupyter 所有相关的路径。
 
-![](https://source.acexy.cn/view/XTPWnu4)
+![](../_images/jupyter-ns-2.jpg)
 
 - 主要用到的命令
   - jupyter
@@ -87,7 +87,7 @@ Jupyter Notebook 的本质是一个 Web 应用程序，便于创建和共享文�
 
 `jupyter --paths`结果：
 
-![](https://source.acexy.cn/view/XTPWn+f)
+![](../_images/jupyter-ns-1.jpg)
 
 - 三类：
   1. config:配置文件路径
@@ -133,15 +133,15 @@ pip install jupyter notebook
   ```
 - 图形化界面设置：
 
-  > ![](https://source.acexy.cn/view/XTPWoPc)
+  > ![](../_images/jupyter-ns-9.jpg)
   > 在此处可以开启与设置插件
 
 - 可能遇见问题：
   > 安装后会可能出现这种错误(此处只是演示，实际可能会超长一串)：具体原因会写在下面
   - 问题 1：插件启用错误
-    > ![](https://source.acexy.cn/view/XTPWpAi)
+    > ![](../_images/jupyter-ns-4.jpg)
   - 问题 2：配置文件重复
-    > ![](https://source.acexy.cn/view/XTPWppw)
+    > ![](../_images/jupyter-ns-5.jpg)
   - 问题 3：浏览器控制台插件报错。
 
 ## 2.3. 插件自定义安装
@@ -157,7 +157,7 @@ pip install jupyter notebook
 - 假设此处 zip 放在 `D:\\`
 - 目录切到`D:\\`
 - 为`learn`环境安装 vim 插件：
-  > ![](https://source.acexy.cn/view/XTPWqbs)
+  > ![](../_images/jupyter-ns-8.jpg)
   - 查看提示可以发现，安装插件就是把 zip 解压到指定目录，此处使用的`--sys-prefix`选项，所以只会为本环境安装插件。
   - 关于三个选项上面有进行说明：<a href="#user-sys">跳转</a>
   - 另外，`jupyter nbextension install`指令只能解压 zip 包，对于其他包，也可以事先解压为文件夹，在进行安装，该指令会直接把插件拷贝到指定目录。当然，如果只是手动将插件复制到指定目录也行，但要确保目录复制正确
@@ -172,7 +172,7 @@ pip install jupyter notebook
   - 当然，如果不想调用命令，也可以通过自己修改配置文件的方式开关与配置插件
 - `jupyter nbextension list`查看插件列表
   - 如果开启插件时名称错误，会有这种类型的报错：
-    > ![](https://source.acexy.cn/view/XTPWpAi)<br>
+    > ![](../_images/jupyter-ns-4.jpg)<br>
     > 该报错原因是三个插件目录中都没有找到`nbextensions_configurator/tree_tab/main.js`
 - `jupyter notebook`开启 notebook
 
@@ -189,7 +189,7 @@ pip install jupyter notebook
   pip install jupyter_contrib_nbextensions
   ```
 - 主要使用模块说明(红线画出):
-  > ![](https://source.acexy.cn/view/XTPWqh8)
+  > ![](../_images/jupyter-ns-7.jpg)
   - 模块说明
     - jupyter_contrib_nbextensions
       > contrib 时 contribute 的缩写
@@ -205,12 +205,12 @@ pip install jupyter notebook
 ### 2.3.3. 插件配置
 
 - 可以通过图形化界面配置
-  > ![](https://source.acexy.cn/view/XTPWoPc)
+  > ![](../_images/jupyter-ns-9.jpg)
   - 注意：在图形化界面配置时最终会将配置写入到`~/.jupyter/nbconfig/notebook.json`中
     > 如果多个 conda 环境都有 jupyter notebook 的话，可能会因为配置混用儿导致各种错误。
     > 那样的话建议更改完后将配置内容复制到`env路径\etc\jupyter\nbconfig\notebook.json`中，再删除配置文件，争取配置文件互相独立
 - 插件配置示例：
-  > ![](https://source.acexy.cn/view/XTPWqpT)
+  > ![](../_images/jupyter-ns-10.jpg)
   - 公用插件
     - 将多个环境通用的插件放在了`‪C:\ProgramData\jupyter\nbextensions\notebook.json`
       > 即 `--system`
@@ -273,19 +273,19 @@ pip install jupyter notebook
 ### 2.3.4. 可能遇到问题
 
 - 问题 1：插件启用错误
-  > ![](https://source.acexy.cn/view/XTPWpAi)
+  > ![](../_images/jupyter-ns-4.jpg)
   1. `jupyter nbextension list`查看在哪个配置文件中开启
   2. 进入配置文件，将对应开启的一条配置删除
   3. 查看插件的名称，仿照**单插件安装示例**，使用`jupyter nbextension enable ...`开启
 - 问题 2：配置文件重复
-  > ![](https://source.acexy.cn/view/XTPWppw)
+  > ![](../_images/jupyter-ns-5.jpg)
   1. 查看日志，进入日志中显示的两条目录下买呢
   2. 随便删除一个即可(通常是因为插件重复，那样的话最好删除其中一个目录下的插件)
 - 问题 3:
-  > ![](https://source.acexy.cn/view/XTiK3kJ)
+  > ![](../_images/jupyter-ns-11.jpg)
   1. 去`env路径/Lib/site-packages/jupyter_nbextension_configurator/staic/nbextensions_configurator`
   2. 把该文件夹(就是一个插件)复制到三个插件目录之一（推荐复制到--sys-perfix）
-     > 如果直接开启会遇到这种问题：<br> > ![](https://source.acexy.cn/view/XTiK3sk)
+     > 如果直接开启会遇到这种问题：<br> > ![](../_images/jupyter-ns-12.jpg)
   3. 删除插件目录下的配置文件`/config_menu/config_menu.yarm`,`/tree_tab/tree_tab.yaml`
      > 这里挺邪门的，命名插件加载不去读取，但插件配置文件会去读取，所以要做这个操作。
 

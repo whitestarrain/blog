@@ -27,7 +27,7 @@ description: Anaconda+vscode基础环境搭建
 ## 2.1. 所有程序
 
 安装后的window开始菜单栏（左下角的那个）所有应用：
-![](https://source.acexy.cn/view/XSuPIdz)
+![](../_images/anaconda-init-2.jpg)
 
 > 后面多了个(anaconda3)的快捷方式和没有的是同一个，只是名称不同而已
 
@@ -43,7 +43,7 @@ description: Anaconda+vscode基础环境搭建
 ## 2.2. 为何不用设置环境变量
 
 查看Anaconda Prompt (anaconda3)的目标:
-![](https://source.acexy.cn/view/XSuPIqA)
+![](../_images/anaconda-init-3.jpg)
 
 - 目标 属性： `%windir%\System32\cmd.exe "/K" D:\learn\anaconda3\Scripts\activate.bat D:\learn\anaconda3`
 - 分析
@@ -56,7 +56,7 @@ description: Anaconda+vscode基础环境搭建
     - D:\learn\anaconda3：传入参数，代表命令anaconda命令所在目录
 
 - 演示
-    > ![](https://source.acexy.cn/view/XSuPI2c)
+    > ![](../_images/anaconda-init-4.jpg)
     - 右侧为执行Anaconda Promp
     - 左侧为普通cmd，无法查询到python和pip所在位置
         - 但执行Anaconda Prompt快捷方式中的命令后会和Anaconda Prompt相同
@@ -81,7 +81,7 @@ activate learn_python
 
 **python目录结构**
 
-![](https://source.acexy.cn/view/XSuPJBx)
+![](../_images/anaconda-init-1.jpg)
 
 - DLLs： Python 自己使用的动态库
 - Doc： 自带的 Python 使用说明文档（如果上面安装时不选择，应该会没有，这个没具体试过）
@@ -107,11 +107,11 @@ activate learn_python
 1. 添加python插件
 2. 点击右下角选择解析器(vscode会自动查找)
 3. 选择工作空间以及对应解析器
-![](https://source.acexy.cn/view/XSuPJNp)
+![](../_images/anaconda-init-5.jpg)
 
 此时，`ctrl+shift+` 新建终端，会发现自动进入虚拟环境。
 程序执行时也会在指定虚拟环境中执行。
-![](https://source.acexy.cn/view/XSuPJru)
+![](../_images/anaconda-init-6.jpg)
 
 
 #### 2.3.3.2. 代码检查+格式化

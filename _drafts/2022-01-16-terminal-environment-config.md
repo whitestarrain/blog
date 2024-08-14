@@ -22,34 +22,34 @@ tags:
 
 - 通过不同配置powershell,不同nvim命令会选择性启动不同的插件
 
-  ![2022-01-16-terminal-environment-2](../images/2022-01-16-terminal-environment-2.png)
+  ![2022-01-16-terminal-environment-2](../_images/2022-01-16-terminal-environment-2.png)
 
 - nvim-qt 与 终端nvim 的适配
 
-  ![2022-01-16-terminal-environment-10](../images/2022-01-16-terminal-environment-10.png)
+  ![2022-01-16-terminal-environment-10](../_images/2022-01-16-terminal-environment-10.png)
 
-  ![2022-01-16-terminal-environment-11](../images/2022-01-16-terminal-environment-11.png)
+  ![2022-01-16-terminal-environment-11](../_images/2022-01-16-terminal-environment-11.png)
 
 - react开发示例
 
-  ![2022-01-16-terminal-environment-3](../images/2022-01-16-terminal-environment-3.png)
+  ![2022-01-16-terminal-environment-3](../_images/2022-01-16-terminal-environment-3.png)
 
-  ![2022-01-16-terminal-environment-5](../images/2022-01-16-terminal-environment-5.png)
+  ![2022-01-16-terminal-environment-5](../_images/2022-01-16-terminal-environment-5.png)
 
 - latex编辑示例
 
   - 补全
 
-    ![2022-01-16-terminal-environment-6](../images/2022-01-16-terminal-environment-6.png)
-    ![2022-01-16-terminal-environment-8](../images/2022-01-16-terminal-environment-8.png)
+    ![2022-01-16-terminal-environment-6](../_images/2022-01-16-terminal-environment-6.png)
+    ![2022-01-16-terminal-environment-8](../_images/2022-01-16-terminal-environment-8.png)
 
   - 目录，snippet
 
-    ![2022-01-16-terminal-environment-7](../images/2022-01-16-terminal-environment-7.png)
+    ![2022-01-16-terminal-environment-7](../_images/2022-01-16-terminal-environment-7.png)
 
   - 实时编译
 
-    ![2022-01-16-terminal-environment-9](../images/2022-01-16-terminal-environment-9.png)
+    ![2022-01-16-terminal-environment-9](../_images/2022-01-16-terminal-environment-9.png)
 
 - 其他示例与gif（有时间继续补充示例）
   - float terminal
@@ -66,7 +66,7 @@ tags:
 
 - 总览
 
-  ![2022-01-16-terminal-environment-1](../images/2022-01-16-terminal-environment-1.png)
+  ![2022-01-16-terminal-environment-1](../_images/2022-01-16-terminal-environment-1.png)
 - z 命令
 - fzf
 - PSReadline
@@ -133,7 +133,7 @@ tags:
 - 缺点
   - <del>wezterm窗口聚焦时，其他两个常用软件：utools和snipaste，使用时偶尔有卡顿情况。但基本不影响使用</del>(nightly版本中修复，2022-03-18)
   - <del>光标下文字颜色显示有一点儿问题</del>(nightly版本中修复，2022-03-18)
-   > ![2022-01-16-terminal-environment-config-1](../images/2022-01-16-terminal-environment-config-1.png)
+   > ![2022-01-16-terminal-environment-config-1](../_images/2022-01-16-terminal-environment-config-1.png)
 
 # vim配置
 

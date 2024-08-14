@@ -29,7 +29,7 @@ description: 动态规划基础问题入门
     - 将问题分割为小问题，从单个字母开始比较，逐渐扩张到整个字符串（看了解决步骤就明白了）
     - 创建一个二维数组，用来存储每一步的结果。每次填完一行后再填第二行。
 
-> ![](https://source.acexy.cn/view/XSuPFPe)
+> ![](../_images/dq-0.jpg)
 
 - 填第一行
     - 第一行第一列`(1,1)` 。表示字符串`f`和字符串`h`公共序列长度
@@ -49,7 +49,7 @@ description: 动态规划基础问题入门
             - 而由`(1,3)`可知， `f`与`hiz`公共子串为0。
             - 结果：0+0=0
 
-> ![](https://source.acexy.cn/view/XSuPFmy)
+> ![](../_images/dq-1.jpg)
 
 - 填`(2,1)`。`fi`与`h`公共子序列长度。
     - i与h不相同，为0
@@ -57,7 +57,7 @@ description: 动态规划基础问题入门
     - `f`与`h`公共子串为0。
     - 结果：0+0=0
 
-> ![](https://source.acexy.cn/view/XSuPGVb)
+> ![](../_images/dq-2.jpg)
 
 - 填`(2,2)`。`fi`和`hi`
     - i与i相同。为 1
@@ -67,7 +67,7 @@ description: 动态规划基础问题入门
     - 结果：1+0=1
     - 即：`(2,2)`值为 `1 + max{ (1,2)的值 , (2,1)的值 } = 1`
 
-> ![](https://source.acexy.cn/view/XSuPGjc)
+> ![](../_images/dq-3.jpg)
 
 - 填第二行剩下的
     - `(2,3)`: `fi`与`hiz`公共子序列长度，
@@ -83,15 +83,15 @@ description: 动态规划基础问题入门
         - 取两者较大值
         - 结果：1+0=1
 
-> ![](https://source.acexy.cn/view/XSuPGz+)
+> ![](../_images/dq-4.jpg)
 
 - 同样步骤填第三行：
 
-> ![](https://source.acexy.cn/view/XSuPHEW)
+> ![](../_images/dq-5.jpg)
 
 - 第四行：
 
-> ![](https://source.acexy.cn/view/XSuPHXW)
+> ![](../_images/dq-6.jpg)
 
 - 最终结果为2
 
@@ -102,7 +102,7 @@ description: 动态规划基础问题入门
 亲自按照上面的方式算下`fishi`和`hizhii`。是不是出现问题了？先自己仔细想想问题出在那里。
 
 请看此图：
-![](https://source.acexy.cn/view/XSuPHo9)
+![](../_images/dq-8.jpg)
 
 我们按照上面算法一步步得做，最终却出现了问题： **算法告诉我们填2，但大脑告诉我们填1**
 
@@ -116,14 +116,14 @@ description: 动态规划基础问题入门
 > 这依旧是动态规划，只是每步的计算方式有些变化而已
 
 有一个方式可以避免多次相同带来的问题：就是：**看左上方的数值**
-![](https://source.acexy.cn/view/XSuPH2k)
+![](../_images/dq-7.jpg)
 
 而字符不相同的，就选取左边或上边的最大值。相当于：
-![](https://source.acexy.cn/view/XSuPIBW)
+![](../_images/dq-9.jpg)
 
 
 最终算法：
-![](https://source.acexy.cn/view/XSuPIOO)
+![](../_images/dq-10.jpg)
 
 # 5. 代码示例
 

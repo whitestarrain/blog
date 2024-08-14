@@ -253,7 +253,7 @@ tags:
 ## 1.12. 重置
 
 - 三棵树：
-  > ![git-tree](https://source.acexy.cn/view/XhAbuld)
+  > ![git-tree](../_images/git-tree.png)
   - HARD指针
   - 暂存区
   - 工作目录
