@@ -7,7 +7,8 @@ tags:
   - lua
 ---
 
-个人编辑笔记，写博客，写一些代码等已经从 vscode 转移到 nvim 上很久了。  
+个人编辑笔记，写博客，写一些代码等已经从 vscode 转移到 nvim 上很久了。
+
 其中 vscode 有一个为 markdown 标题编号的插件[auto-markdown-toc](https://marketplace.visualstudio.com/items?itemName=huntertran.auto-markdown-toc)用了挺长时间，一般会搭配 chrome 上自带侧边栏的[markdown viewer](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)插件浏览自己的 markdown 笔记。
 但是 vim 上找了许久，也没有找到为标题编号的插件。这两天看了一下 nvim 的接口，用 lua 写了一个插件实现了功能。简单记录一下。
 
@@ -55,12 +56,12 @@ vim 启动时，会自动寻找`runtimepath`下的脚本进行加载。首先对
 
 vim 和 nvim 的插件加载路径并不相同，以 nvim 为例，windows 下默认加载以下路径，并按照顺序执行以下目录中的脚本：
 
-- ~\AppData\Local\nvim
-- ~\AppData\Local\nvim-data\site
-- [install path]\share\nvim\runtime
-- [install path]\lib\nvim
-- ~\AppData\Local\nvim-data\site\after
-- ~\AppData\Local\nvim\after
+- `~\AppData\Local\nvim`
+- `~\AppData\Local\nvim-data\site`
+- `[install path]\share\nvim\runtime`
+- `[install path]\lib\nvim`
+- `~\AppData\Local\nvim-data\site\after`
+- `~\AppData\Local\nvim\after`
 
 可以通过以下命令查询`runtimepath`：
 
@@ -111,7 +112,8 @@ vim 加载的脚本除了`.vimrc`(vim)或者`init.vim`，以及配置文件中 s
 - doc/
   - 存放文档
 
-有一点需要注意：  
+有一点需要注意：
+
 每个文件夹中脚本的内容并没有强制规定。
 在`ftplugin`中写全局相关的命令，或者在`indent`中写与`indent`无关的命令都没有问题，但是会让可读性变低，
 最好按照功能的实现将代码放到对应的脚本目录下。
@@ -144,13 +146,17 @@ let &runtimepath = &runtimepaht .. "," .. "<path_to_plugin>"
 当前(2022-06)使用较多的 vimscript 实现的插件管理器为`vim-plug`，而使用较多的 lua 实现的的插件管理器为`packer.nvim`，
 两者都可以加载 vimscript 实现的插件以及 lua 实现的插件。可以根据自己喜好进行选择。
 
-个人使用的是`vim-plug`，使用 autocmd 的方式，将每个的插件安装命令和插件的配置脚本放到一个脚本文件中，
-再通过自定义命令`LoadScript`和`LoadLua`的方式指定要在加载的插件。
+<del>
+我使用的是`vim-plug`，使用 autocmd 的方式，将每个的插件安装命令和插件的配置脚本放到一个脚本文件中，再通过自定义命令`LoadScript`和`LoadLua`的方式指定要在加载的插件。
+</del>
 
-详情可以参考个人的[`dotfiles`](https://github.com/whitestarrain/dotfiles)。
+<del>
+不清楚`PACKER.NVIM`是否可以实现这种效果(`STARTUP`是否可以调用多次)，并且有些 VIM 实现的插件用 LUA 配置起来也不是很方便，也就还没有转到`PACKER.NVIM`，有时间再折腾。
+</del>
 
-个人不清楚`packer.nvim`是否可以实现这种效果(`startup`是否可以调用多次)，并且有些 vim 实现的插件用 lua 配置起来也不是很方便，
-也就还没有转到`packer.nvim`，有时间再折腾。
+现在已经改为使用 `lazy.nvim` 管理插件，基本上所有配置也切为了lua。如果想看以前vim版本的配置的话，可以查看`nvim0.7`分支(2024-09-07 edit)
+
+详情可以参考[`dotfiles`](https://github.com/whitestarrain/dotfiles)。
 
 ### vim 内置插件包管理方法
 
@@ -240,6 +246,8 @@ neovim 暴露了一个全局变量`vim`来作为 lua 调用 vim api 的入口。
   - `vim.filetype.add()`
 
 配置好开发环境后，可以根据代码提示和文档熟悉一下端口。在开发过程中也可以通过`help`学习不熟悉的接口
+
+推荐先过一眼这个文档，对api有个大致了解：[nvim-lua-guide-zh](https://github.com/glepnir/nvim-lua-guide-zh)
 
 # 插件实现
 
@@ -346,6 +354,7 @@ end
 ```
 
 同时需要跳过注释以及代码块中的符合标题模式的行。
+markdown基本上没有太复杂的语法，使用语法分析的话有点儿小题大做，这里单纯通过栈实现。
 
 ````lua
 -- 定义需要忽略的 包围pair
@@ -373,7 +382,7 @@ for line_number, line in ipairs(all_lines) do
 
 ### replacer
 
-为标题添加标号，
+为标题添加标号
 
 ```lua
 --[[
@@ -433,6 +442,13 @@ for i = 1, #heading_lines do
   table.insert(heading_lines[i], heading_number)
 end
 ```
+
+这样基本逻辑就实现了，因为到现在插件本身就是用来文本处理的，没有用到太多的 nvim api。
+
+后续其实也实现了toc功能，终于远离了tagbar进行markdown导航，其中涉及到的buffer，autocmd 操作比较多，这里就不展开说了 (2024-09-07 edit)
+
+如果想要从头写一个简单TUI类型的插件，推荐跟着这篇文章做一下 [How to write neovim plugins in Lua](https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua)，
+其中window，buffer相关的api都有相关调用。
 
 ### 插件配置
 
